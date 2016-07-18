@@ -1,0 +1,28 @@
+project_title                               = WP Tocify Pro
+
+project_owner                               = websharks
+project_slug                                = wp-tocify-pro
+project_text_domain                         = wp-tocify
+
+project_namespace                           = WebSharks\\WpSharks\\WpTocify\\Pro
+project_sub_namespace                       = WpSharksWpTocifyPro
+
+project_lite_title                          = WP Tocify
+project_lite_slug                           = wp-tocify
+project_lite_text_domain                    = wp-tocify
+
+project_lite_namespace                      = WebSharks\\WpSharks\\WpTocify
+project_lite_sub_namespace                  = WpSharksWpTocify
+
+project_version                             = %y%m%d.%now
+
+project_php_required_version                = 7.0.4
+project_php_tested_up_to_version            = ${php.version}
+project_php_required_bits                   = 64
+project_php_required_extensions             =
+
+project_wp_required_version                 = 4.5.3
+project_wp_tested_up_to_version             = 4.5.3
+
+project_wp_sharks_core_required_version     = 160715.31125
+project_wp_sharks_core_tested_up_to_version = 160715.31125

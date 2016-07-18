@@ -1,0 +1,54 @@
+{
+  "name": "websharks/wp-tocify-pro",
+  "homepage": "https://github.com/websharks/wp-tocify-pro",
+  "description": "Automatic Table of Contents (TOC) generation for WordPress.",
+  "keywords": ["websharks", "wpsharks", "tocify"],
+
+  "type": "project",
+  "license": "GPL-3.0+",
+
+  "authors": [{
+    "name": "wpsharks",
+    "homepage": "https://wpsharks.com",
+    "role": "company"
+  }, {
+    "name": "jaswsinc",
+    "homepage": "https://jaswsinc.com",
+    "role": "developer"
+  }, {
+    "name": "raamdev",
+    "homepage": "http://raam.org",
+    "role": "developer"
+  }],
+
+  "support": {
+    "source": "https://github.com/websharks/wp-tocify-pro",
+    "issues": "https://github.com/websharks/wp-tocify-pro/issues"
+  },
+
+  "require": {
+    "php-64bit": ">=7.0.4",
+    "websharks/wp-php-rv": "dev-master",
+    "websharks/wp-sharks-core-rv": "dev-master"
+  },
+  "require-dev": {},
+
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+
+  "autoload": {
+    "psr-4": {
+      "WebSharks\\WpSharks\\WpTocify\\Pro\\Classes\\": "src/includes/classes",
+      "WebSharks\\WpSharks\\WpTocify\\Pro\\Functions\\": "src/includes/functions",
+      "WebSharks\\WpSharks\\WpTocify\\Pro\\Interfaces\\": "src/includes/interfaces",
+      "WebSharks\\WpSharks\\WpTocify\\Pro\\Traits\\": "src/includes/traits"
+    }
+  },
+
+  "config": {
+    "vendor-dir": "src/vendor",
+    "preferred-install": "dist"
+  },
+
+  "repositories": []
+}
