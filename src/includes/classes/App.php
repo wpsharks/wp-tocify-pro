@@ -49,12 +49,10 @@ class App extends SCoreClasses\App
     {
         $instance_base = [
             '©di' => [
-                /*
-                    '©default_rule' => [
-                        'new_instances' => [
-                        ],
+                '©default_rule' => [
+                    'new_instances' => [
                     ],
-                */
+                ],
             ],
 
             '§specs' => [
@@ -77,87 +75,8 @@ class App extends SCoreClasses\App
                 '©text_domain' => 'wp-tocify',
             ],
 
-            '§pro_option_keys' => [
-                /*
-                    '[key]',
-                */
-            ],
-            '§default_options' => [
-                /*
-                    '[key]' => '[value]',
-                */
-            ],
-
-            '§conflicts' => [
-                '§plugins' => [
-                    /*
-                        '[slug]'  => '[name]',
-                    */
-                ],
-                '§themes' => [
-                    /*
-                        '[slug]'  => '[name]',
-                    */
-                ],
-                '§deactivatable_plugins' => [
-                    /*
-                        '[slug]'  => '[name]',
-                    */
-                ],
-            ],
-            '§dependencies' => [
-                '§plugins' => [
-                    /*
-                        '[slug]' => [
-                            'name'        => '',
-                            'url'         => '',
-                            'archive_url' => '',
-                            'in_wp'       => true,
-                            'test'        => function(string $slug) {},
-
-                            A test function is optional.
-                            A successful test must return nothing.
-                            A failed test must return an array with:
-                                - `reason`      = One of: `needs-upgrade|needs-downgrade`.
-                                - `min_version` = Min version, if `reason=needs-upgrade`.
-                                - `max_version` = Max version, if `reason=needs-downgrade`.
-                        ],
-                    */
-                ],
-                '§themes' => [
-                    /*
-                        '[slug]' => [
-                            'name'        => '',
-                            'url'         => '',
-                            'archive_url' => '',
-                            'in_wp'       => true,
-                            'test'        => function(string $slug) {},
-
-                            A test function is optional.
-                            A successful test must return nothing.
-                            A failed test must return an array with:
-                                - `reason`      = One of: `needs-upgrade|needs-downgrade`.
-                                - `min_version` = Min version, if `reason=needs-upgrade`.
-                                - `max_version` = Max version, if `reason=needs-downgrade`.
-                        ],
-                    */
-                ],
-                '§others' => [
-                    /*
-                        '[arbitrary key]' => [
-                            'name'        => '', // Short plain-text name; i.e., '[name]' Required
-                            'description' => '', // Brief rich-text description; i.e., It requires [description].
-                            'test'        => function(string $key) {},
-
-                            A test function is required.
-                            A successful test must return nothing.
-                            A failed test must return an array with:
-                                - `how_to_resolve` = Brief rich-text description; i.e., → To resolve, [how_to_resolve].
-                                - `cap_to_resolve` = Cap required to satisfy; e.g., `manage_options`.
-                        ],
-                    */
-                ],
-            ],
+            '§pro_option_keys' => [],
+            '§default_options' => [],
         ];
         parent::__construct($instance_base, $instance);
     }
