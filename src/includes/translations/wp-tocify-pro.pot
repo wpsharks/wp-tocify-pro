@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WP Tocify Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Tocify Pro 160724.48038\n"
+"Project-Id-Version: WP Tocify Pro 160724.65065\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-tocify-pro\n"
-"POT-Creation-Date: 2016-07-24 13:20:40+00:00\n"
+"POT-Creation-Date: 2016-07-24 18:04:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,286 +12,169 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/classes/Utils/MenuPage.php:47
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/classes/Utils/MenuPage.php:47
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/classes/Utils/MenuPage.php:47
-#: .~build/wp-tocify/src/includes/classes/Utils/MenuPage.php:47
-#: .~build/wp-tocify-pro/src/includes/classes/Utils/MenuPage.php:47
 #: src/includes/classes/Utils/MenuPage.php:47
 msgid "%1$s"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/classes/Utils/ScriptsStyles.php:78
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/classes/Utils/ScriptsStyles.php:78
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/classes/Utils/ScriptsStyles.php:78
-#: .~build/wp-tocify/src/includes/classes/Utils/ScriptsStyles.php:78
-#: .~build/wp-tocify-pro/src/includes/classes/Utils/ScriptsStyles.php:78
-#: src/includes/classes/Utils/ScriptsStyles.php:78
+#: src/includes/classes/Utils/MenuPage.php:49
+msgid "Restore Default Options"
+msgstr ""
+
+#: src/includes/classes/Utils/ScriptsStyles.php:77
 msgid "Table of Contents"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:31
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:31
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:31
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:31
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:31
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:31
 msgid "Enable Heading Anchors?"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:32
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:32
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:32
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:32
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:32
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:32
-msgid "This adds anchors to each of your headings automatically.<hr />If you also want to display a Table of Contents, use the <code>[toc]</code> shortcode in your content; i.e., put <code>[toc]</code> where you want it displayed."
+msgid "This adds anchors to each of your headings automatically."
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
-msgid "Yes"
-msgstr ""
-
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
-#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:50
+#: src/includes/templates/admin/menu-pages/settings/default.php:51
+#: src/includes/templates/admin/menu-pages/settings/default.php:64
 msgid "No"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:30
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:30
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:30
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:30
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:30
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
+#: src/includes/templates/admin/menu-pages/settings/default.php:52
+msgid "Yes"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:43
+msgid "Show Table of Contents?"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:44
+msgid "If enabled, this will show a Table of Contents."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:51
+#: src/includes/templates/admin/menu-pages/settings/default.php:65
+msgid "Yes (float right)"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:52
+#: src/includes/templates/admin/menu-pages/settings/default.php:66
+msgid "Yes (float left)"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:53
+#: src/includes/templates/admin/menu-pages/settings/default.php:67
+msgid "Yes (via [toc] shortcode)"
+msgstr ""
+
 #: src/includes/templates/admin/menu-pages/settings/default.php:30
 msgid "General Options"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:31
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:31
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:31
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:31
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:31
 #: src/includes/templates/admin/menu-pages/settings/default.php:31
 msgid "Browse the <a href=\"%1$s\" target=\"_blank\">knowledge base</a> to learn more about these options."
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:35
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:35
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:35
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:35
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:35
 #: src/includes/templates/admin/menu-pages/settings/default.php:35
-msgid "Default Meta Box Option"
-msgstr ""
-
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:36
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:36
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:36
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:36
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:36
-#: src/includes/templates/admin/menu-pages/settings/default.php:36
-msgid "When %1$s is applicable (based on your Post Type options), what should be the default setting for a new Post?"
-msgstr ""
-
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:41
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:41
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:41
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:41
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:41
-#: src/includes/templates/admin/menu-pages/settings/default.php:41
-msgid "Disable %1$s"
-msgstr ""
-
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:42
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:42
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:42
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:42
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:42
-#: src/includes/templates/admin/menu-pages/settings/default.php:42
-msgid "Enable %1$s"
-msgstr ""
-
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:47
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:47
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:47
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:47
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:47
-#: src/includes/templates/admin/menu-pages/settings/default.php:47
 msgid "JS/CSS Content Selector"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:48
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:48
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:48
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:48
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:48
-#: src/includes/templates/admin/menu-pages/settings/default.php:48
-msgid "This must be a valid CSS selector. It's used by jQuery to find the 'content' portion of an article in the DOM.<hr />Many WordPress themes use <code>.entry-content</code>, but this is not univeral. You may need to customize this depending on the theme you're using.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority."
+#: src/includes/templates/admin/menu-pages/settings/default.php:36
+msgid "This must be a valid CSS selector. It's used by jQuery to find the DOM 'content'.<hr />Many WordPress themes use <code>.entry-content</code>, but this is not univeral. You may need to customize this depending on the theme you're using.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority."
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:59
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:59
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:59
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:59
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:59
-#: src/includes/templates/admin/menu-pages/settings/default.php:59
+#: src/includes/templates/admin/menu-pages/settings/default.php:37
+msgid "Widening the scope of this selector may pick up additional headings like an &lt;h1&gt; tag."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:44
+msgid "Enable Anchors by Default?"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:45
+msgid "When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls h[1-6] headings being anchored in the article (by default), or not."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:46
+msgid "It is suggested that you enable this by default so that headings will always be anchored."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:57
+msgid "Enable TOC by Default?"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:58
+msgid "When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls the Table of Contents being shown in the article (by default), or not."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:76
 msgid "Post Type Options"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:60
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:60
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:60
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:60
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:60
-#: src/includes/templates/admin/menu-pages/settings/default.php:60
-msgid "These two settings give you the flexibility to include (or exclude) specific Post Types."
+#: src/includes/templates/admin/menu-pages/settings/default.php:77
+msgid "These two settings give you the flexibility to include (or exclude) specific Post Types. It's usually easier to forget about the list of exclusions and instead choose specific Post Types to include. The choice is yours. You can use one of these lists only, or both together at the same time."
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:64
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:64
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:64
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:64
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:64
-#: src/includes/templates/admin/menu-pages/settings/default.php:64
+#: src/includes/templates/admin/menu-pages/settings/default.php:81
 msgid "Include Post Types"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:65
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:65
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:65
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:65
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:65
-#: src/includes/templates/admin/menu-pages/settings/default.php:65
+#: src/includes/templates/admin/menu-pages/settings/default.php:82
 msgid "This enables the %1$s meta box (and TOC-related functionality) for specific Post Types. If nothing selected, all are included by default."
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:79
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:79
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:79
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:79
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:79
-#: src/includes/templates/admin/menu-pages/settings/default.php:79
+#: src/includes/templates/admin/menu-pages/settings/default.php:96
 msgid "Exclude Post Types"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:80
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:80
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:80
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:80
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:80
-#: src/includes/templates/admin/menu-pages/settings/default.php:80
+#: src/includes/templates/admin/menu-pages/settings/default.php:97
 msgid "This disables the %1$s meta box (and TOC-related functionality) for specific Post Types that you exclude."
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:98
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:98
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:98
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:98
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:98
-#: src/includes/templates/admin/menu-pages/settings/default.php:98
+#: src/includes/templates/admin/menu-pages/settings/default.php:115
 msgid "CSS / Style Options"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:99
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:99
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:99
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:99
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:99
-#: src/includes/templates/admin/menu-pages/settings/default.php:99
-msgid "These allows you to style the anchors used by %1$s."
+#: src/includes/templates/admin/menu-pages/settings/default.php:116
+msgid "These options allow you to style the anchors used by %1$s."
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:103
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:103
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:103
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:103
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:103
-#: src/includes/templates/admin/menu-pages/settings/default.php:103
+#: src/includes/templates/admin/menu-pages/settings/default.php:120
 msgid "Custom Anchor Symbol"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:104
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:104
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:104
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:104
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:104
-#: src/includes/templates/admin/menu-pages/settings/default.php:104
+#: src/includes/templates/admin/menu-pages/settings/default.php:121
 msgid "This controls the marker used to indicate a hashed location."
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:105
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:115
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:105
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:115
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:105
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:115
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:105
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:115
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:105
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:115
-#: src/includes/templates/admin/menu-pages/settings/default.php:105
-#: src/includes/templates/admin/menu-pages/settings/default.php:115
+#: src/includes/templates/admin/menu-pages/settings/default.php:122
+#: src/includes/templates/admin/menu-pages/settings/default.php:132
 msgid "Copy/paste alternatives: <span style=\"font-size:1.5em;\">¶ § 🔗 #</span><br />"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:106
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:116
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:106
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:116
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:106
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:116
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:106
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:116
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:106
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:116
-#: src/includes/templates/admin/menu-pages/settings/default.php:106
-#: src/includes/templates/admin/menu-pages/settings/default.php:116
-msgid "You can also set this to a URL; e.g., a custom SVG icon."
+#: src/includes/templates/admin/menu-pages/settings/default.php:123
+#: src/includes/templates/admin/menu-pages/settings/default.php:133
+msgid "You can also set this to a URL or path; e.g., <code>/custom-icon.svg</code>"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:113
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:113
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:113
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:113
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:113
-#: src/includes/templates/admin/menu-pages/settings/default.php:113
+#: src/includes/templates/admin/menu-pages/settings/default.php:130
 msgid "Custom TOC Symbol"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:114
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:114
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:114
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:114
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:114
-#: src/includes/templates/admin/menu-pages/settings/default.php:114
+#: src/includes/templates/admin/menu-pages/settings/default.php:131
 msgid "This controls the marker used to indicate a hashed location in the TOC."
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:123
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:123
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:123
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:123
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:123
-#: src/includes/templates/admin/menu-pages/settings/default.php:123
+#: src/includes/templates/admin/menu-pages/settings/default.php:140
 msgid "Custom Anchor Styles"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:124
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:124
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:124
-#: .~build/wp-tocify/src/includes/templates/admin/menu-pages/settings/default.php:124
-#: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/settings/default.php:124
-#: src/includes/templates/admin/menu-pages/settings/default.php:124
+#: src/includes/templates/admin/menu-pages/settings/default.php:141
 msgid "e.g., Add lines that customize style attributes such as <code>width:</code>, <code>color:</code>, etc."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:142
+msgid "Use <a href=\"https://css-tricks.com/when-using-important-is-the-right-choice/\" target=\"_blank\"><code>!important</code></a> to override default structural styles."
 msgstr ""
 
 #. Plugin Name of the plugin/theme

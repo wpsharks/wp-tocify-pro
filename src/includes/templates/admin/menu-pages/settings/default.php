@@ -34,7 +34,7 @@ $Form = $this->s::MenuPageForm('§save-options');
         <?= $Form->inputRow([
             'label' => __('JS/CSS Content Selector', 'wp-tocify'),
             'tip'   => __('This must be a valid CSS selector. It\'s used by jQuery to find the DOM \'content\'.<hr />Many WordPress themes use <code>.entry-content</code>, but this is not univeral. You may need to customize this depending on the theme you\'re using.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority.', 'wp-tocify'),
-            'note'  => __('Widening the scope of this selector may pick up additional headings like an &lt;h1&gt; tag.'),
+            'note'  => __('Widening the scope of this selector may pick up additional headings like an &lt;h1&gt; tag.', 'wp-tocify'),
 
             'name'  => 'context',
             'value' => s::getOption('context'),
@@ -43,7 +43,7 @@ $Form = $this->s::MenuPageForm('§save-options');
         <?= $Form->selectRow([
             'label' => __('Enable Anchors by Default?', 'wp-tocify'),
             'tip'   => sprintf(__('When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls h[1-6] headings being anchored in the article (by default), or not.', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
-            'note'  => __('It is suggested that you enable this by default so that headings will always be anchored.'),
+            'note'  => __('It is suggested that you enable this by default so that headings will always be anchored.', 'wp-tocify'),
 
             'name'    => 'default_anchors_enable',
             'value'   => s::getOption('default_anchors_enable'),
@@ -139,7 +139,7 @@ $Form = $this->s::MenuPageForm('§save-options');
         <?= $Form->textareaRow([
             'label' => __('Custom Anchor Styles', 'wp-tocify'),
             'tip'   => __('e.g., Add lines that customize style attributes such as <code>width:</code>, <code>color:</code>, etc.', 'wp-tocify'),
-            'note'  => __('Use <a href="https://css-tricks.com/when-using-important-is-the-right-choice/" target="_blank"><code>!important</code></a> to override default structural styles.'),
+            'note'  => __('Use <a href="https://css-tricks.com/when-using-important-is-the-right-choice/" target="_blank"><code>!important</code></a> to override default structural styles.', 'wp-tocify'),
 
             'name'  => 'custom_styles',
             'value' => s::getOption('custom_styles'),

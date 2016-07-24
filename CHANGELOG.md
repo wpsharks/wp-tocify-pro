@@ -1,4 +1,4 @@
-## $v
+## v160724.65065
 
 - Enhancing options page.
 - Improving CSS specificity with respect to the `[toc /]` shortcode, making this plugin more compatible with a variety of themes.
