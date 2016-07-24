@@ -25,7 +25,7 @@ use function get_defined_vars as vars;
 /**
  * Menu page utils.
  *
- * @since 16xxxx Initial release.
+ * @since 160724.1960 Initial release.
  */
 class MenuPage extends SCoreClasses\SCore\Base\Core
 {

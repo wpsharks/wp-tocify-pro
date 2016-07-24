@@ -25,14 +25,14 @@ use function get_defined_vars as vars;
 /**
  * Shortcode utils.
  *
- * @since 16xxxx Initial release.
+ * @since 160724.1960 Initial release.
  */
 class Shortcode extends SCoreClasses\SCore\Base\Core
 {
     /**
      * `[toc /]` shortcode.
      *
-     * @since 16xxxx Initial release.
+     * @since 160724.1960 Initial release.
      *
      * @param array|string $atts      Shortcode attributes.
      * @param string|null  $content   Shortcode content.

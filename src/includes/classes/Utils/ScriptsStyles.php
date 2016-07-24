@@ -25,14 +25,14 @@ use function get_defined_vars as vars;
 /**
  * Scripts/styles.
  *
- * @since 16xxxx Initial release.
+ * @since 160724.1960 Initial release.
  */
 class ScriptsStyles extends SCoreClasses\SCore\Base\Core
 {
     /**
      * On body classes.
      *
-     * @since 16xxxx Initial release.
+     * @since 160724.1960 Initial release.
      *
      * @param array $classes Body classes.
      *
@@ -50,7 +50,7 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
     /**
      * Scripts/styles.
      *
-     * @since 16xxxx Initial release.
+     * @since 160724.1960 Initial release.
      */
     public function onWpEnqueueScripts()
     {
@@ -83,7 +83,7 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
     /**
      * Format symbol for CSS `content:` usage.
      *
-     * @since 16xxxx Initial release.
+     * @since 160724.1960 Initial release.
      *
      * @param string $symbol Symbol to format.
      *
@@ -100,7 +100,7 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
     /**
      * Is applicable?
      *
-     * @since 16xxxx Initial release.
+     * @since 160724.1960 Initial release.
      *
      * @return bool True if applicable.
      */
