@@ -1,6 +1,6 @@
 <?php
 declare (strict_types = 1);
-namespace WebSharks\WpSharks\WpTocify\Pro;
+namespace WebSharks\WpSharks\WpTocify\Pro\Classes\Utils;
 
 use WebSharks\WpSharks\WpTocify\Pro\Classes;
 use WebSharks\WpSharks\WpTocify\Pro\Interfaces;
@@ -22,10 +22,30 @@ use WebSharks\Core\WpSharksCore\Traits as CoreTraits;
 use function assert as debug;
 use function get_defined_vars as vars;
 
-class ActiveTest extends \PHPUnit_Framework_TestCase
+/**
+ * Menu page utils.
+ *
+ * @since 16xxxx Initial release.
+ */
+class MenuPage extends SCoreClasses\SCore\Base\Core
 {
-    public function testActive()
+    /**
+     * Adds menu pages.
+     *
+     * @since 160718.59682 Menu page utils.
+     */
+    public function onAdminMenu()
     {
-        $this->assertSame(true, c::app() instanceof Classes\App);
+        s::addMenuPageItem([
+            'auto_prefix'   => false,
+            'parent_page'   => 'options-general.php',
+            'page_title'    => $this->App->Config->©brand['©name'],
+            'menu_title'    => $this->App->Config->©brand['©name'],
+            'template_file' => 'admin/menu-pages/settings/default.php',
+
+            'tabs' => [
+                'default' => sprintf(__('%1$s', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
+            ],
+        ]);
     }
 }

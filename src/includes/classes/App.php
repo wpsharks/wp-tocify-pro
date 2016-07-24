@@ -1,14 +1,14 @@
 <?php
 declare (strict_types = 1);
-namespace WebSharks\WpSharks\WPTocify\Pro\Classes;
+namespace WebSharks\WpSharks\WpTocify\Pro\Classes;
 
-use WebSharks\WpSharks\WPTocify\Pro\Classes;
-use WebSharks\WpSharks\WPTocify\Pro\Interfaces;
-use WebSharks\WpSharks\WPTocify\Pro\Traits;
+use WebSharks\WpSharks\WpTocify\Pro\Classes;
+use WebSharks\WpSharks\WpTocify\Pro\Interfaces;
+use WebSharks\WpSharks\WpTocify\Pro\Traits;
 #
-use WebSharks\WpSharks\WPTocify\Pro\Classes\AppFacades as a;
-use WebSharks\WpSharks\WPTocify\Pro\Classes\SCoreFacades as s;
-use WebSharks\WpSharks\WPTocify\Pro\Classes\CoreFacades as c;
+use WebSharks\WpSharks\WpTocify\Pro\Classes\AppFacades as a;
+use WebSharks\WpSharks\WpTocify\Pro\Classes\SCoreFacades as s;
+use WebSharks\WpSharks\WpTocify\Pro\Classes\CoreFacades as c;
 #
 use WebSharks\WpSharks\Core\Classes as SCoreClasses;
 use WebSharks\WpSharks\Core\Interfaces as SCoreInterfaces;
@@ -36,7 +36,7 @@ class App extends SCoreClasses\App
      *
      * @type string Version.
      */
-    const VERSION = '160715.31930'; //v//
+    const VERSION = '160724.1881'; //v//
 
     /**
      * Constructor.
@@ -76,19 +76,25 @@ class App extends SCoreClasses\App
             ],
 
             '§pro_option_keys' => [],
-            '§default_options' => [],
+            '§default_options' => [
+                'meta_box_default_enable' => '1',
+                'context'                 => '.entry-content, .hentry, #content',
+
+                'anchor_symbol' => '#', 'toc_symbol' => '#',
+
+                'custom_styles' => '.wp-tocify-heading {}'."\n".
+                                   '.wp-tocify-anchor {}'."\n".
+                                   '.wp-tocify-toc {}',
+
+                'include_post_types' => [],
+                'exclude_post_types' => [
+                    'attachment',
+                    'revision',
+                    'nav_menu_item',
+                ],
+            ],
         ];
         parent::__construct($instance_base, $instance);
-    }
-
-    /**
-     * Early hook setup handler.
-     *
-     * @since 16xxxx Initial release.
-     */
-    protected function onSetupEarlyHooks()
-    {
-        parent::onSetupEarlyHooks();
     }
 
     /**
@@ -99,5 +105,13 @@ class App extends SCoreClasses\App
     protected function onSetupOtherHooks()
     {
         parent::onSetupOtherHooks();
+
+        if ($this->Wp->is_admin) {
+            add_action('admin_menu', [$this->Utils->MenuPage, 'onAdminMenu']);
+            add_action('admin_init', [$this->Utils->PostMetaBox, 'onAdminInit']);
+        }
+        add_filter('body_class', [$this->Utils->ScriptsStyles, 'onBodyClass']);
+        add_action('wp_enqueue_scripts', [$this->Utils->ScriptsStyles, 'onWpEnqueueScripts']);
+        add_shortcode('toc', [$this->Utils->Shortcode, 'onShortcode']);
     }
 }

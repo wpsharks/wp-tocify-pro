@@ -1,6 +1,6 @@
 <?php
 declare (strict_types = 1);
-namespace WebSharks\WpSharks\WPTocify\Pro;
+namespace WebSharks\WpSharks\WpTocify\Pro;
 
 if (!defined('WPINC')) {
     exit('Do NOT access this file directly: '.basename(__FILE__));

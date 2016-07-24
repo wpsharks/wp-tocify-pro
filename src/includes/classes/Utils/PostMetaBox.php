@@ -1,6 +1,6 @@
 <?php
 declare (strict_types = 1);
-namespace WebSharks\WpSharks\WpTocify\Pro;
+namespace WebSharks\WpSharks\WpTocify\Pro\Classes\Utils;
 
 use WebSharks\WpSharks\WpTocify\Pro\Classes;
 use WebSharks\WpSharks\WpTocify\Pro\Interfaces;
@@ -22,10 +22,27 @@ use WebSharks\Core\WpSharksCore\Traits as CoreTraits;
 use function assert as debug;
 use function get_defined_vars as vars;
 
-class ActiveTest extends \PHPUnit_Framework_TestCase
+/**
+ * Post meta box utils.
+ *
+ * @since 16xxxx Initial release.
+ */
+class PostMetaBox extends SCoreClasses\SCore\Base\Core
 {
-    public function testActive()
+    /**
+     * On admin init.
+     *
+     * @since 16xxxx Initial release.
+     */
+    public function onAdminInit()
     {
-        $this->assertSame(true, c::app() instanceof Classes\App);
+        s::addPostMetaBox([
+            'include_post_types' => s::getOption('include_post_types'),
+            'exclude_post_types' => s::getOption('exclude_post_types'),
+
+            'slug'          => 'settings',
+            'context'       => 'side',
+            'template_file' => 'admin/menu-pages/post-meta-box/settings.php',
+        ]);
     }
 }

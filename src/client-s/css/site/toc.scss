@@ -1,0 +1,192 @@
+/*
+ * Dependencies. Requires a local copy of the WP Sharks Core.
+ */
+@import '../../../../../wp-sharks-core/src/client-s/css/bourbon/bourbon';
+
+/*
+ * Brand configuration.
+ */
+$brand-slug: 'wp-tocify';
+$brand-var: 'wp_tocify';
+
+/*
+ * Color variables.
+ */
+$toc-bg-color: #eee;
+$toc-border-color: #ccc;
+$toc-heading-color: #787878;
+$toc-icon-color: #aaa;
+
+/*
+ * Enable context.
+ */
+.#{$brand-slug}-enable {
+  /*
+   * Headings.
+   */
+  .#{$brand-slug}-heading {
+    clear:                    none;
+  }
+
+  /*
+   * Anchor styles.
+   */
+  .#{$brand-slug}-anchor,
+  .#{$brand-slug}-anchor:hover,
+  .#{$brand-slug}-anchor:focus,
+  .#{$brand-slug}-anchor:active,
+  .#{$brand-slug}-anchor:visited {
+    //
+    width:                    auto;
+    height:                   auto;
+    box-sizing:               border-box;
+
+    //
+    box-shadow:               none;
+    text-shadow:              none;
+    text-decoration:          none;
+    outline:                  none;
+    background:               none;
+
+    //
+    font-size:               .75em;
+    line-height:              inherit;
+    font-family:              inherit;
+    font-style:               normal;
+    font-weight:              normal;
+
+    //
+    padding:                  0;
+    margin:                   0 0 0 .5em;
+    display:                  inline-block;
+    vertical-align:           middle;
+  }
+
+  /*
+   * Anchor # icon.
+   */
+  .#{$brand-slug}-anchor {
+    &::after {
+      @include transition(opacity 0.25s);
+
+      //
+      content:                '#';
+
+      //
+      opacity:                0;
+      display:                inline-block;
+
+      //
+      width:                  1em;
+      height:                 1em;
+      box-sizing:             inherit;
+    }
+  }
+
+  /*
+   * On heading hover.
+   */
+  .#{$brand-slug}-heading:hover {
+    .#{$brand-slug}-anchor {
+      &::after {
+        opacity:              1;
+        color:                inherit;
+      }
+
+      &:hover {
+        &::after {
+          font-weight:        bold;
+        }
+      }
+    }
+  }
+
+  /*
+   * Table of Contents.
+   */
+  .#{$brand-slug}-toc {
+    //
+    width:                    30%;
+    float:                    right;
+    position:                 relative;
+    box-sizing:               border-box;
+    margin:                   0 0 3em 3em;
+
+    //
+    border-radius:           .25em;
+    padding:                  1em;
+    background:               $toc-bg-color;
+    border:                   1px solid $toc-border-color;
+
+    //
+    line-height:              1;
+    font-size:                1em;
+    font-weight:              normal;
+
+    @media (max-width: 767px) {
+      display:                none;
+    }
+
+    h4 {
+      padding:                0;
+      line-height:            1;
+      margin:                 0 0 .5em;
+      color:                  $toc-heading-color;
+    }
+
+    ul,
+    ul > li {
+      margin:                 0;
+      padding:                0;
+      list-style:             none;
+    }
+
+    ul > li {
+      line-height:            1;
+      font-size:             .95em;
+      margin:                .5em 0 0 1em;
+
+      &::before {
+        content:              '#';
+        float:                left;
+        text-align:           center;
+        margin:               0 0 0 -1.5em;
+        width:                1.28571429em;
+        color:                $toc-icon-color;
+      }
+
+      > a {
+        border:               0;
+        line-height:          1;
+        white-space:          pre;
+        text-decoration:      none;
+        display:              block;
+        font-weight:          normal;
+        overflow:             hidden;
+        text-overflow:        ellipsis;
+      }
+    }
+
+    > ul > li {
+      font-size:              100%;
+
+      &:first-child {
+        margin-top:           0;
+      }
+    }
+
+    &.-float-left {
+      float:                  left;
+      margin:                 0 3em 3em 0;
+    }
+
+    &.-float-right {
+      float:                  right;
+      margin:                 0 0 3em 3em;
+    }
+
+    &.style-default {
+      width:                  30%;
+    }
+  }
+}

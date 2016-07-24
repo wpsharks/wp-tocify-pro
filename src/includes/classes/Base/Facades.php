@@ -1,14 +1,14 @@
 <?php
 declare (strict_types = 1);
-namespace WebSharks\WpSharks\WPTocify\Pro\Classes\Base;
+namespace WebSharks\WpSharks\WpTocify\Pro\Classes\Base;
 
-use WebSharks\WpSharks\WPTocify\Pro\Classes;
-use WebSharks\WpSharks\WPTocify\Pro\Interfaces;
-use WebSharks\WpSharks\WPTocify\Pro\Traits;
+use WebSharks\WpSharks\WpTocify\Pro\Classes;
+use WebSharks\WpSharks\WpTocify\Pro\Interfaces;
+use WebSharks\WpSharks\WpTocify\Pro\Traits;
 #
-use WebSharks\WpSharks\WPTocify\Pro\Classes\AppFacades as a;
-use WebSharks\WpSharks\WPTocify\Pro\Classes\SCoreFacades as s;
-use WebSharks\WpSharks\WPTocify\Pro\Classes\CoreFacades as c;
+use WebSharks\WpSharks\WpTocify\Pro\Classes\AppFacades as a;
+use WebSharks\WpSharks\WpTocify\Pro\Classes\SCoreFacades as s;
+use WebSharks\WpSharks\WpTocify\Pro\Classes\CoreFacades as c;
 #
 use WebSharks\WpSharks\Core\Classes as SCoreClasses;
 use WebSharks\WpSharks\Core\Interfaces as SCoreInterfaces;
@@ -25,7 +25,7 @@ use function get_defined_vars as vars;
 /**
  * Pseudo-static facades.
  *
- * @since 16xxxx Initial release.
+ * @since 160718 Initial release.
  */
 abstract class Facades
 {

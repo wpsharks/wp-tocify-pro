@@ -1,0 +1,155 @@
+# Copyright (C) 2016 WP Tocify Pro
+# This file is distributed under the same license as the WP Tocify Pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Tocify Pro 160724.1881\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-tocify-pro\n"
+"POT-Creation-Date: 2016-07-24 00:31:27+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: src/includes/classes/Utils/MenuPage.php:47
+msgid "%1$s"
+msgstr ""
+
+#: src/includes/classes/Utils/ScriptsStyles.php:78
+msgid "Table of Contents"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:31
+msgid "Enable Heading Anchors?"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:32
+msgid "This adds anchors to each of your headings automatically.<hr />If you also want to display a Table of Contents, use the <code>[toc]</code> shortcode in your content; i.e., put <code>[toc]</code> where you want it displayed."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
+msgid "No"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
+msgid "Yes"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:30
+msgid "General Options"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:31
+msgid "Browse the <a href=\"%1$s\" target=\"_blank\">knowledge base</a> to learn more about these options."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:35
+msgid "Default Meta Box Option"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:36
+msgid "When %1$s is applicable (based on your Post Type options), what should be the default setting for a new Post?"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:41
+msgid "Disable %1$s"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:42
+msgid "Enable %1$s"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:47
+msgid "JS/CSS Content Selector"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:48
+msgid "This must be a valid CSS selector. It's used by jQuery to find the 'content' portion of an article in the DOM.<hr />Many WordPress themes use <code>.entry-content</code>, but this is not univeral. You may need to customize this depending on the theme you're using.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:59
+msgid "Post Type Options"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:60
+msgid "These two settings give you the flexibility to include (or exclude) specific Post Types."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:64
+msgid "Include Post Types"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:65
+msgid "This enables the %1$s meta box (and TOC-related functionality) for specific Post Types. If nothing selected, all are included by default."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:79
+msgid "Exclude Post Types"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:80
+msgid "This disables the %1$s meta box (and TOC-related functionality) for specific Post Types that you exclude."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:98
+msgid "CSS / Style Options"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:99
+msgid "These allows you to style the anchors used by %1$s."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:103
+msgid "Custom Anchor Symbol"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:104
+msgid "This controls the marker used to indicate a hashed location."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:105
+#: src/includes/templates/admin/menu-pages/settings/default.php:115
+msgid "Copy/paste alternatives: <span style=\"font-size:1.5em;\">¶ § 🔗 #</span><br />"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:106
+#: src/includes/templates/admin/menu-pages/settings/default.php:116
+msgid "You can also set this to a URL; e.g., a custom SVG icon."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:113
+msgid "Custom TOC Symbol"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:114
+msgid "This controls the marker used to indicate a hashed location in the TOC."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:123
+msgid "Custom Anchor Styles"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/settings/default.php:124
+msgid "e.g., Add lines that customize style attributes such as <code>width:</code>, <code>color:</code>, etc."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP Tocify Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wpsharks.com/product/wp-tocify-pro"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Automatic Table of Contents (TOC) generation for WordPress."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WP Sharks™"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://wpsharks.com"
+msgstr ""
