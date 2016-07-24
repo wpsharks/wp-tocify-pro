@@ -41,7 +41,7 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
     public function onShortcode($atts = [], $content = '', $shortcode = ''): string
     {
         $default_atts = [
-            'float' => 'right',
+            'float' => 'none',
             'style' => 'default',
         ];
         $atts  = shortcode_atts($default_atts, $atts, $shortcode);

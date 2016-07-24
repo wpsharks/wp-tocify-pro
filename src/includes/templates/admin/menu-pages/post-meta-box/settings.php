@@ -29,13 +29,28 @@ $Form = $this->s::postMetaBoxForm('settings');
 
     <?= $Form->selectRow([
         'label' => __('Enable Heading Anchors?', 'wp-tocify'),
-        'tip'   => __('This adds anchors to each of your headings automatically.<hr />If you also want to display a Table of Contents, use the <code>[toc]</code> shortcode in your content; i.e., put <code>[toc]</code> where you want it displayed.', 'wp-tocify'),
+        'tip'   => __('This adds anchors to each of your headings automatically.', 'wp-tocify'),
 
-        'name'    => '_enable',
-        'value'   => s::getPostMeta($post_id, '_enable', s::getOption('meta_box_default_enable')),
+        'name'    => '_anchors_enable',
+        'value'   => s::getPostMeta($post_id, '_anchors_enable', s::getOption('default_anchors_enable')),
         'options' => [
             '0' => __('No', 'wp-tocify'),
             '1' => __('Yes', 'wp-tocify'),
+        ],
+    ]); ?>
+
+    <?= $Form->selectRow([
+        'label' => __('Show Table of Contents?', 'wp-tocify'),
+        'tip'   => __('If enabled, this will show a Table of Contents.', 'wp-tocify'),
+
+        'name'       => '_toc_enable',
+        'depends_on' => ['_anchors_enable'],
+        'value'      => s::getPostMeta($post_id, '_toc_enable', s::getOption('default_toc_enable')),
+        'options'    => [
+            '0'                           => __('No', 'wp-tocify'),
+            '-float-right -style-default' => __('Yes (float right)', 'wp-tocify'),
+            '-float-left -style-default'  => __('Yes (float left)', 'wp-tocify'),
+            'via-shortcode'               => __('Yes (via [toc] shortcode)', 'wp-tocify'),
         ],
     ]); ?>
 

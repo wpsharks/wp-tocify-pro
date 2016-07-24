@@ -9,13 +9,14 @@
     var x = sQVXAaHbXuTCEnBDLBHQpNkxWYfJdfmVData;
 
     /*
-     * Get context.
+     * Context.
      */
     var getContext = function () {
       var $context, // Initialize only.
-        contexts = x.options.context.split(',');
+        contexts = x.settings.context.split(',');
 
       $.each(contexts, function (_i, _context) {
+        _context = $.trim(_context);
         if (($context = $(_context).first()).length) {
           return false; // Break iteration.
         }
@@ -24,22 +25,22 @@
     };
 
     /**
-     * TOC generator.
+     * Generator.
      */
     var maybeGenerate = function () {
-      if (!$('.' + x.brand.slug + '-enable').length) {
-        return; // Not enabled for this article.
-      }
+      var $context; // Initialize.
 
-      var $context = getContext(),
-        headings = [],
-        tocUl = '';
-
-      if (!$context.length) {
+      if (!$('.' + x.brand.slug).length) {
+        return; // Not enabled here.
+      } else if (!x.settings.anchorsEnable || x.settings.anchorsEnable === '0') {
+        return; // Not enabled here.
+      } else if (!($context = getContext()).length) {
         return; // Not possible.
       }
 
-      var _childUlTagsOpen = 0,
+      var headings = [],
+        tocUl = '',
+        _childUlTagsOpen = 0,
         _prevHeading,
         _heading,
         _i;
@@ -47,26 +48,30 @@
       $context.find('h1, h2, h3, h4, h5, h6')
         .each(function (index) {
           var $heading = $(this),
-
             title = $.trim($heading.text().replace(/\s+/g, ' ')),
             hash = 'toc-' + crc32($.trim(index + title)),
             size = $heading.prop('tagName').substr(1),
-            $a = $('<a />');
+            $a = $('<a />'); // Initialize.
 
           headings.push({
             hash: hash,
             size: size,
             title: title
           });
-          $a.attr('id', hash).attr('href', '#' + hash).addClass(x.brand.slug + '-anchor');
+          $a.attr('id', hash).attr('href', '#' + hash)
+            .addClass(x.brand.slug + '-anchor');
+
           $heading.addClass(x.brand.slug + '-heading').append($a);
         });
 
       if (!headings.length) {
-        return; // Not enabled or no headings.
+        return; // Not headings on this page.
+      } else if (!x.settings.tocEnable || x.settings.tocEnable === '0') {
+        return; // The TOC is not enabled on this page.
       }
 
       toc = '<div class="' + escHtml(x.brand.slug + '-toc') + '">';
+      toc += '<div>'; // Helpful in CSS. Allows for a float margin.
       toc += '<h4>' + escHtml(x.i18n.tocHeading) + '</h4>';
       toc += '<ul>'; // Begin table of contents.
 
@@ -100,26 +105,34 @@
       toc += '</li>';
       toc += '</ul>';
       toc += '</div>';
+      toc += '</div>';
 
-      maybeInject($context, $(toc));
+      injectToc($context, $(toc));
     };
 
-    var maybeInject = function ($context, $toc) {
-      var $shortcode = $('.' + x.brand.slug + '-toc-shortcode'),
-        atts = $shortcode.data('atts');
+    /**
+     * TOC injector.
+     */
+    var injectToc = function ($context, $toc) {
+      if (x.settings.tocEnable === 'via-shortcode') {
 
-      if (!$shortcode.length) {
-        return; // No shortcode in this article.
-      }
-      if (typeof atts === 'object') {
-        $.each(atts, function (_att, _val) {
-          $toc.addClass('-' + _att + '-' + _val);
-        });
-        if (typeof atts.style === 'string' && atts.style === 'none') {
-          $toc.removeClass(); // Remove all classes.
+        var $shortcode = $('.' + x.brand.slug + '-toc-shortcode'),
+          atts = $shortcode.data('atts');
+
+        if (!$shortcode.length) {
+          return; // No shortcode in this article.
         }
+        if (typeof atts === 'object') {
+          $.each(atts, function (_att, _val) {
+            $toc.addClass('-' + _att + '-' + _val);
+          });
+        }
+        $shortcode.replaceWith($toc);
+
+      } else { // Use setting as classes.
+        $toc.addClass(x.settings.tocEnable);
+        $context.prepend($toc);
       }
-      $shortcode.replaceWith($toc);
     };
 
     /**
@@ -175,7 +188,7 @@
     /*
      * Maybe generate.
      */
-    maybeGenerate(); // i.e., If enabled here.
+    maybeGenerate();
   };
   /*
    * On DOM ready.

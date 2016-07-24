@@ -31,24 +31,41 @@ $Form = $this->s::MenuPageForm('§save-options');
         sprintf(__('Browse the <a href="%1$s" target="_blank">knowledge base</a> to learn more about these options.', 'wp-tocify'), esc_url(s::brandUrl('/kb')))
     ); ?>
 
-        <?= $Form->selectRow([
-            'label' => __('Default Meta Box Option', 'wp-tocify'),
-            'tip'   => sprintf(__('When %1$s is applicable (based on your Post Type options), what should be the default setting for a new Post?', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
-
-            'name'    => 'meta_box_default_enable',
-            'value'   => s::getOption('meta_box_default_enable'),
-            'options' => [
-                '0' => sprintf(__('Disable %1$s', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
-                '1' => sprintf(__('Enable %1$s', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
-            ],
-        ]); ?>
-
         <?= $Form->inputRow([
             'label' => __('JS/CSS Content Selector', 'wp-tocify'),
-            'tip'   => __('This must be a valid CSS selector. It\'s used by jQuery to find the \'content\' portion of an article in the DOM.<hr />Many WordPress themes use <code>.entry-content</code>, but this is not univeral. You may need to customize this depending on the theme you\'re using.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority.', 'wp-tocify'),
+            'tip'   => __('This must be a valid CSS selector. It\'s used by jQuery to find the DOM \'content\'.<hr />Many WordPress themes use <code>.entry-content</code>, but this is not univeral. You may need to customize this depending on the theme you\'re using.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority.', 'wp-tocify'),
+            'note'  => __('Widening the scope of this selector may pick up additional headings like an &lt;h1&gt; tag.'),
 
             'name'  => 'context',
             'value' => s::getOption('context'),
+        ]); ?>
+
+        <?= $Form->selectRow([
+            'label' => __('Enable Anchors by Default?', 'wp-tocify'),
+            'tip'   => sprintf(__('When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls h[1-6] headings being anchored in the article (by default), or not.', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
+            'note'  => __('It is suggested that you enable this by default so that headings will always be anchored.'),
+
+            'name'    => 'default_anchors_enable',
+            'value'   => s::getOption('default_anchors_enable'),
+            'options' => [
+                '0' => __('No', 'wp-tocify'),
+                '1' => __('Yes', 'wp-tocify'),
+            ],
+        ]); ?>
+
+        <?= $Form->selectRow([
+            'label' => __('Enable TOC by Default?', 'wp-tocify'),
+            'tip'   => sprintf(__('When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls the Table of Contents being shown in the article (by default), or not.', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
+            'note'  => __('Choosing <strong>via [toc] shortcode</strong> allows you to insert a TOC whenever and wherever you want.<pre style="margin:.5em 0 0 .5em;">[toc float="right|left|none" style="none|default"]'."\n".' Example: [toc float="right"] at the top of your article.'."\n".' Example: [toc style="none"] to get unstyled list items anywhere.</pre>'),
+
+            'name'    => 'default_toc_enable',
+            'value'   => s::getOption('default_toc_enable'),
+            'options' => [
+                '0'                           => __('No', 'wp-tocify'),
+                '-float-right -style-default' => __('Yes (float right)', 'wp-tocify'),
+                '-float-left -style-default'  => __('Yes (float left)', 'wp-tocify'),
+                'via-shortcode'               => __('Yes (via [toc] shortcode)', 'wp-tocify'),
+            ],
         ]); ?>
 
     <?= $Form->closeTable(); ?>
@@ -57,7 +74,7 @@ $Form = $this->s::MenuPageForm('§save-options');
 
     <?= $Form->openTable(
         __('Post Type Options', 'wp-tocify'),
-        sprintf(__('These two settings give you the flexibility to include (or exclude) specific Post Types.', 'wp-tocify'), esc_url(s::brandUrl('/kb')))
+        sprintf(__('These two settings give you the flexibility to include (or exclude) specific Post Types. It\'s usually easier to forget about the list of exclusions and instead choose specific Post Types to include. The choice is yours. You can use one of these lists only, or both together at the same time.', 'wp-tocify'), esc_url(s::brandUrl('/kb')))
     ); ?>
 
         <?= $Form->selectRow([
@@ -96,14 +113,14 @@ $Form = $this->s::MenuPageForm('§save-options');
 
     <?= $Form->openTable(
         __('CSS / Style Options', 'wp-tocify'),
-        sprintf(__('These allows you to style the anchors used by %1$s.', 'wp-tocify'), esc_html($this->App->Config->©brand['©name']))
+        sprintf(__('These options allow you to style the anchors used by %1$s.', 'wp-tocify'), esc_html($this->App->Config->©brand['©name']))
     ); ?>
 
         <?= $Form->inputRow([
             'label' => __('Custom Anchor Symbol', 'wp-tocify'),
             'tip'   => __('This controls the marker used to indicate a hashed location.', 'wp-tocify'),
             'note'  => __('Copy/paste alternatives: <span style="font-size:1.5em;">¶ § 🔗 #</span><br />', 'wp-tocify').
-                       __('You can also set this to a URL; e.g., a custom SVG icon.', 'wp-tocify'),
+                       __('You can also set this to a URL or path; e.g., <code>/custom-icon.svg</code>', 'wp-tocify'),
 
             'name'  => 'anchor_symbol',
             'value' => s::getOption('anchor_symbol'),
@@ -113,7 +130,7 @@ $Form = $this->s::MenuPageForm('§save-options');
             'label' => __('Custom TOC Symbol', 'wp-tocify'),
             'tip'   => __('This controls the marker used to indicate a hashed location in the TOC.', 'wp-tocify'),
             'note'  => __('Copy/paste alternatives: <span style="font-size:1.5em;">¶ § 🔗 #</span><br />', 'wp-tocify').
-                       __('You can also set this to a URL; e.g., a custom SVG icon.', 'wp-tocify'),
+                       __('You can also set this to a URL or path; e.g., <code>/custom-icon.svg</code>', 'wp-tocify'),
 
             'name'  => 'toc_symbol',
             'value' => s::getOption('toc_symbol'),
@@ -122,6 +139,7 @@ $Form = $this->s::MenuPageForm('§save-options');
         <?= $Form->textareaRow([
             'label' => __('Custom Anchor Styles', 'wp-tocify'),
             'tip'   => __('e.g., Add lines that customize style attributes such as <code>width:</code>, <code>color:</code>, etc.', 'wp-tocify'),
+            'note'  => __('Use <a href="https://css-tricks.com/when-using-important-is-the-right-choice/" target="_blank"><code>!important</code></a> to override default structural styles.'),
 
             'name'  => 'custom_styles',
             'value' => s::getOption('custom_styles'),

@@ -43,8 +43,8 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
         if (!$this->isApplicable()) {
             return $classes; // Not applicable.
         }
-        $classes[] = $this->App->Config->©brand['©slug'].'-enable';
-        return $classes; // With attribute to enable.
+        $classes[]      = $this->App->Config->©brand['©slug'];
+        return $classes = array_unique($classes);
     }
 
     /**
@@ -54,7 +54,7 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
      */
     public function onWpEnqueueScripts()
     {
-        if (!$this->isApplicable()) {
+        if (!($settings = $this->isApplicable())) {
             return; // Not applicable.
         }
         $brand_slug    = $this->App->Config->©brand['©slug'];
@@ -71,13 +71,46 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
                 'slug' => $this->App->Config->©brand['©slug'],
                 'var'  => $this->App->Config->©brand['©var'],
             ],
-            'options' => [
-                'context' => s::getOption('context'),
-            ],
+            'settings' => $settings, // Via `isApplicable()`.
+
             'i18n' => [
                 'tocHeading' => __('Table of Contents', 'wp-tocify'),
             ],
         ]);
+    }
+
+    /**
+     * Is applicable?
+     *
+     * @since 160724.1960 Initial release.
+     *
+     * @return array Settings if applicable.
+     */
+    protected function isApplicable(): array
+    {
+        if (($is = &$this->cacheKey(__FUNCTION__)) !== null) {
+            return $is; // Cached this already.
+        } elseif (!is_singular(/* post type. */)) {
+            return $is = []; // Not applicable.
+        }
+        $context        = s::getOption('context'); // e.g., `.entry-content`, etc.
+        $anchors_enable = s::getPostMeta(null, '_anchors_enable', s::getOption('default_anchors_enable'));
+
+        if (!$context || !$anchors_enable) {
+            return $is = []; // Not applicable.
+        }
+        $current_post_type  = get_post_type();
+        $include_post_types = s::getOption('include_post_types');
+        $exclude_post_types = s::getOption('exclude_post_types');
+
+        if ($include_post_types && !in_array($current_post_type, $include_post_types, true)) {
+            return $is = []; // Not applicable.
+        } elseif ($exclude_post_types && in_array($current_post_type, $exclude_post_types, true)) {
+            return $is = []; // Not applicable.
+        }
+        $toc_enable = s::getPostMeta(null, '_toc_enable', s::getOption('default_toc_enable'));
+
+        return $is = ['context' => $context, 'anchorsEnable' => $anchors_enable, 'tocEnable' => $toc_enable];
     }
 
     /**
@@ -91,35 +124,9 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
      */
     protected function formatSymbol(string $symbol): string
     {
-        if (mb_stripos($symbol, 'http') === 0 || mb_strpos($symbol, '/') === 0) {
+        if (preg_match('/\.[^\/.]+$/ui', $symbol)) {
             return 'url('.c::sQuote($symbol).')';
         }
         return c::sQuote($symbol);
-    }
-
-    /**
-     * Is applicable?
-     *
-     * @since 160724.1960 Initial release.
-     *
-     * @return bool True if applicable.
-     */
-    protected function isApplicable(): bool
-    {
-        if (($is = &$this->cacheKey(__FUNCTION__)) !== null) {
-            return $is; // Cached this already.
-        }
-        if (!is_singular() || !s::getPostMeta(null, '_enable')) {
-            return $is = false; // Not applicable.
-        }
-        $include_post_types = s::getOption('include_post_types');
-        $exclude_post_types = s::getOption('exclude_post_types');
-
-        if ($include_post_types && !in_array(get_post_type(), $include_post_types, true)) {
-            return $is = false; // Not applicable.
-        } elseif ($exclude_post_types && in_array(get_post_type(), $exclude_post_types, true)) {
-            return $is = false; // Not applicable.
-        }
-        return $is = true; // Applicable; i.e., nothing excluded it above.
     }
 }

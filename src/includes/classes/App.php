@@ -36,7 +36,7 @@ class App extends SCoreClasses\App
      *
      * @type string Version.
      */
-    const VERSION = '160724.1960'; //v//
+    const VERSION = '160724.48038'; //v//
 
     /**
      * Constructor.
@@ -77,21 +77,24 @@ class App extends SCoreClasses\App
 
             '§pro_option_keys' => [],
             '§default_options' => [
-                'meta_box_default_enable' => '1',
-                'context'                 => '.entry-content, .hentry, #content',
+                'default_anchors_enable' => '1',
+                'default_toc_enable'     => '0',
 
-                'anchor_symbol' => '#', 'toc_symbol' => '#',
+                'context' => '.entry-content, .hentry, #content',
+
+                'anchor_symbol' => '#',
+                'toc_symbol'    => '#',
 
                 'custom_styles' => '.wp-tocify-heading {}'."\n".
                                    '.wp-tocify-anchor {}'."\n".
                                    '.wp-tocify-toc {}',
 
-                'include_post_types' => [],
-                'exclude_post_types' => [
-                    'attachment',
-                    'revision',
-                    'nav_menu_item',
+                'include_post_types' => [
+                    'post',
+                    'page',
+                    'kb_article',
                 ],
+                'exclude_post_types' => [],
             ],
         ];
         parent::__construct($instance_base, $instance);

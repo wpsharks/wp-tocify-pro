@@ -18,15 +18,13 @@ $toc-heading-color: #787878;
 $toc-icon-color: #aaa;
 
 /*
- * Enable context.
+ * Body selector.
  */
-.#{$brand-slug}-enable {
+.#{$brand-slug}:not(#x) {
   /*
    * Headings.
    */
-  .#{$brand-slug}-heading {
-    clear:                    none;
-  }
+  .#{$brand-slug}-heading {}
 
   /*
    * Anchor styles.
@@ -104,75 +102,118 @@ $toc-icon-color: #aaa;
   /*
    * Table of Contents.
    */
-  .#{$brand-slug}-toc {
-    //
-    width:                    30%;
-    float:                    right;
-    position:                 relative;
-    box-sizing:               border-box;
-    margin:                   0 0 3em 3em;
-
-    //
-    border-radius:           .25em;
-    padding:                  1em;
-    background:               $toc-bg-color;
-    border:                   1px solid $toc-border-color;
-
-    //
-    line-height:              1;
+  .#{$brand-slug}-toc:not(.-style-none) {
     font-size:                1em;
     font-weight:              normal;
+    line-height:              1.1;
+
+    //
+    box-sizing:               border-box;
 
     @media (max-width: 767px) {
       display:                none;
     }
 
-    h4 {
-      padding:                0;
-      line-height:            1;
-      margin:                 0 0 .5em;
-      color:                  $toc-heading-color;
-    }
-
-    ul,
-    ul > li {
-      margin:                 0;
-      padding:                0;
-      list-style:             none;
-    }
-
-    ul > li {
-      line-height:            1;
-      font-size:             .95em;
-      margin:                .5em 0 0 1em;
-
-      &::before {
-        content:              '#';
-        float:                left;
-        text-align:           center;
-        margin:               0 0 0 -1.5em;
-        width:                1.28571429em;
-        color:                $toc-icon-color;
-      }
-
-      > a {
-        border:               0;
-        line-height:          1;
-        white-space:          pre;
-        text-decoration:      none;
-        display:              block;
-        font-weight:          normal;
-        overflow:             hidden;
-        text-overflow:        ellipsis;
+    @media (min-width: 768px) {
+      ~ p,
+      ~ ol,
+      ~ ul,
+      ~ h1,
+      ~ h2,
+      ~ h3,
+      ~ h4,
+      ~ h5,
+      ~ h6,
+      ~ div,
+      ~ form,
+      ~ hr {
+        clear:                none;
+        border-bottom:        1px solid;
       }
     }
 
-    > ul > li {
-      font-size:              100%;
+    /*
+     * Inner `<div>` tag.
+     */
+    > div {
+      padding:                1em;
+      border-radius:         .25em;
+      background:             $toc-bg-color;
+      border:                 1px solid $toc-border-color;
 
-      &:first-child {
-        margin-top:           0;
+      //
+      font-size:              inherit;
+      font-weight:            inherit;
+      line-height:            inherit;
+
+      h4 {
+        padding:              0;
+        margin:               0 0 .5em;
+        color:                $toc-heading-color;
+
+        //
+        font-size:            1.5em;
+        font-weight:          inherit;
+        line-height:          inherit;
       }
+
+      ul,
+      ul > li {
+        margin:               0;
+        padding:              0;
+        list-style:           none;
+
+        //
+        font-size:            inherit;
+        font-weight:          inherit;
+        line-height:          inherit;
+      }
+
+      ul > li {
+        font-size:           .95em;
+        margin:              .5em 0 0 1em;
+
+        &::before {
+          content:            '#';
+          float:              left;
+          text-align:         center;
+          margin:             0 0 0 -1.5em;
+          width:              1.28571429em;
+          color:              $toc-icon-color;
+        }
+
+        > a {
+          border:             0;
+          white-space:        pre;
+          text-decoration:    none;
+          display:            block;
+          overflow:           hidden;
+          text-overflow:      ellipsis;
+
+          //
+          font-size:          inherit;
+          font-weight:        inherit;
+          line-height:        inherit;
+        }
+      }
+
+      > ul > li {
+        font-size:            100%;
+
+        &:first-child {
+          margin-top:         0;
+        }
+      }
+    }
+
+    /*
+     * Style variations.
+     */
+    &.-float-left,
+    &.-float-right {
+      z-index:                1;
+      width:                  30%;
+      position:               relative;
     }
 
     &.-float-left {
@@ -183,10 +224,6 @@ $toc-icon-color: #aaa;
     &.-float-right {
       float:                  right;
       margin:                 0 0 3em 3em;
-    }
-
-    &.style-default {
-      width:                  30%;
     }
   }
 }
