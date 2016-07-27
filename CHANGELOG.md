@@ -1,3 +1,9 @@
+## $v
+
+- Removing underline for titles when floating right.
+- Updating to the latest WP Sharks Core.
+- Enhancing margins when TOC is floated left or right of content.
+
 ## v160724.65065
 
 - Enhancing options page.

@@ -22,7 +22,7 @@ use WebSharks\Core\WpSharksCore\Traits as CoreTraits;
 use function assert as debug;
 use function get_defined_vars as vars;
 
-extract($this->current_vars); // Template vars.
+extract($this->vars); // Template vars.
 $Form = $this->s::MenuPageForm('§save-options');
 ?>
 <?= $Form->openTag(); ?>
@@ -137,7 +137,7 @@ $Form = $this->s::MenuPageForm('§save-options');
         ]); ?>
 
         <?= $Form->textareaRow([
-            'label' => __('Custom Anchor Styles', 'wp-tocify'),
+            'label' => __('Custom Styles', 'wp-tocify'),
             'tip'   => __('e.g., Add lines that customize style attributes such as <code>width:</code>, <code>color:</code>, etc.', 'wp-tocify'),
             'note'  => __('Use <a href="https://css-tricks.com/when-using-important-is-the-right-choice/" target="_blank"><code>!important</code></a> to override default structural styles.', 'wp-tocify'),
 

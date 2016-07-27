@@ -87,7 +87,7 @@ class App extends SCoreClasses\App
 
                 'custom_styles' => '.wp-tocify-heading {}'."\n".
                                    '.wp-tocify-anchor {}'."\n".
-                                   '.wp-tocify-toc {}',
+                                   '.wp-tocify-toc:not(.-style-none) {}',
 
                 'include_post_types' => [
                     'post',
