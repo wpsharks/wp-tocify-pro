@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WP Tocify Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Tocify Pro 160724.65065\n"
+"Project-Id-Version: WP Tocify Pro 160727.5691\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-tocify-pro\n"
-"POT-Creation-Date: 2016-07-24 18:04:43+00:00\n"
+"POT-Creation-Date: 2016-07-27 01:35:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -166,7 +166,7 @@ msgid "This controls the marker used to indicate a hashed location in the TOC."
 msgstr ""
 
 #: src/includes/templates/admin/menu-pages/settings/default.php:140
-msgid "Custom Anchor Styles"
+msgid "Custom Styles"
 msgstr ""
 
 #: src/includes/templates/admin/menu-pages/settings/default.php:141
