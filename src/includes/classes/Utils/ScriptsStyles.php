@@ -1,4 +1,10 @@
 <?php
+/**
+ * Scripts/styles.
+ *
+ * @author @jaswsinc
+ * @copyright WP Sharks™
+ */
 declare (strict_types = 1);
 namespace WebSharks\WpSharks\WpTocify\Pro\Classes\Utils;
 

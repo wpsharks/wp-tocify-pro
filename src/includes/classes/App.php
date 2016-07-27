@@ -1,4 +1,10 @@
 <?php
+/**
+ * Application.
+ *
+ * @author @jaswsinc
+ * @copyright WP Sharks™
+ */
 declare (strict_types = 1);
 namespace WebSharks\WpSharks\WpTocify\Pro\Classes;
 
@@ -23,7 +29,7 @@ use function assert as debug;
 use function get_defined_vars as vars;
 
 /**
- * App class.
+ * Application.
  *
  * @since 160724.1960 Initial release.
  */
@@ -34,7 +40,7 @@ class App extends SCoreClasses\App
      *
      * @since 160724.1960
      *
-     * @type string Version.
+     * @var string Version.
      */
     const VERSION = '160727.5691'; //v//
 
