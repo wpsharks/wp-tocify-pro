@@ -6,7 +6,7 @@
  * @copyright WP Sharks™
  */
 declare (strict_types = 1);
-namespace WebSharks\WpSharks\WpTocify\Pro\Classes\Utils;
+namespace WebSharks\WpSharks\WpTocify\Pro;
 
 use WebSharks\WpSharks\WpTocify\Pro\Classes;
 use WebSharks\WpSharks\WpTocify\Pro\Interfaces;

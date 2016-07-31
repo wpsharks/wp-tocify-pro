@@ -1,3 +1,9 @@
+## $v
+
+- Enhancing options page.
+- A little refactoring to simplify menu pages.
+- Tested against WordPress v4.6 for compatibility.
+
 ## v160727.5691
 
 - Removing underline for titles when floating right.
