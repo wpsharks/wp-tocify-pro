@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WP Tocify Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Tocify Pro 160805.29730\n"
+"Project-Id-Version: WP Tocify Pro 160805.30078\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-tocify-pro\n"
-"POT-Creation-Date: 2016-08-05 08:15:33+00:00\n"
+"POT-Creation-Date: 2016-08-05 08:21:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,7 +15,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/classes/Utils/MenuPage.php:50
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/classes/Utils/MenuPage.php:50
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/classes/Utils/MenuPage.php:50
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/classes/Utils/MenuPage.php:50
 #: .~build/wp-tocify/src/includes/classes/Utils/MenuPage.php:50
 #: .~build/wp-tocify-pro/src/includes/classes/Utils/MenuPage.php:50
 #: src/includes/classes/Utils/MenuPage.php:50
@@ -25,7 +24,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/classes/Utils/MenuPage.php:52
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/classes/Utils/MenuPage.php:52
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/classes/Utils/MenuPage.php:52
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/classes/Utils/MenuPage.php:52
 #: .~build/wp-tocify/src/includes/classes/Utils/MenuPage.php:52
 #: .~build/wp-tocify-pro/src/includes/classes/Utils/MenuPage.php:52
 #: src/includes/classes/Utils/MenuPage.php:52
@@ -35,7 +33,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/classes/Utils/ScriptsStyles.php:83
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/classes/Utils/ScriptsStyles.php:83
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/classes/Utils/ScriptsStyles.php:83
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/classes/Utils/ScriptsStyles.php:83
 #: .~build/wp-tocify/src/includes/classes/Utils/ScriptsStyles.php:83
 #: .~build/wp-tocify-pro/src/includes/classes/Utils/ScriptsStyles.php:83
 #: src/includes/classes/Utils/ScriptsStyles.php:83
@@ -45,7 +42,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:36
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:36
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:36
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:36
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:36
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:36
 #: src/includes/templates/admin/menu-pages/options/default.php:36
@@ -55,7 +51,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:37
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:37
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:37
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:37
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:37
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:37
 #: src/includes/templates/admin/menu-pages/options/default.php:37
@@ -65,7 +60,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:41
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:41
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:41
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:41
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:41
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:41
 #: src/includes/templates/admin/menu-pages/options/default.php:41
@@ -75,7 +69,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:42
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:42
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:42
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:42
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:42
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:42
 #: src/includes/templates/admin/menu-pages/options/default.php:42
@@ -85,7 +78,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:43
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:43
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:43
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:43
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:43
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:43
 #: src/includes/templates/admin/menu-pages/options/default.php:43
@@ -95,7 +87,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:50
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:50
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:50
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:50
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:50
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:50
 #: src/includes/templates/admin/menu-pages/options/default.php:50
@@ -105,7 +96,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:51
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:51
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:51
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:51
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:51
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:51
 #: src/includes/templates/admin/menu-pages/options/default.php:51
@@ -115,7 +105,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:52
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:52
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:52
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:52
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:52
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:52
 #: src/includes/templates/admin/menu-pages/options/default.php:52
@@ -134,10 +123,6 @@ msgstr ""
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:70
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:43
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:56
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:57
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:70
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:43
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:56
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:57
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:70
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:43
@@ -159,8 +144,6 @@ msgstr ""
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:44
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:58
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:44
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:58
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:44
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:58
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:44
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:58
@@ -173,7 +156,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:63
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:63
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:63
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:63
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:63
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:63
 #: src/includes/templates/admin/menu-pages/options/default.php:63
@@ -183,7 +165,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:64
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:64
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:64
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:64
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:64
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:64
 #: src/includes/templates/admin/menu-pages/options/default.php:64
@@ -196,8 +177,6 @@ msgstr ""
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:57
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:71
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:57
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:71
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:57
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:71
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:57
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:71
@@ -213,8 +192,6 @@ msgstr ""
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:58
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:72
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:58
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:72
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:58
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:72
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:58
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:72
@@ -230,8 +207,6 @@ msgstr ""
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:59
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:73
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:59
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:73
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:59
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:73
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:59
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:73
@@ -244,7 +219,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:82
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:82
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:82
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:82
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:82
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:82
 #: src/includes/templates/admin/menu-pages/options/default.php:82
@@ -254,7 +228,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:83
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:83
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:83
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:83
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:83
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:83
 #: src/includes/templates/admin/menu-pages/options/default.php:83
@@ -264,7 +237,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:87
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:87
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:87
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:87
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:87
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:87
 #: src/includes/templates/admin/menu-pages/options/default.php:87
@@ -274,7 +246,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:88
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:88
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:88
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:88
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:88
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:88
 #: src/includes/templates/admin/menu-pages/options/default.php:88
@@ -284,7 +255,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:102
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:102
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:102
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:102
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:102
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:102
 #: src/includes/templates/admin/menu-pages/options/default.php:102
@@ -294,7 +264,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:103
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:103
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:103
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:103
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:103
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:103
 #: src/includes/templates/admin/menu-pages/options/default.php:103
@@ -304,7 +273,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:121
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:121
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:121
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:121
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:121
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:121
 #: src/includes/templates/admin/menu-pages/options/default.php:121
@@ -314,7 +282,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:122
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:122
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:122
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:122
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:122
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:122
 #: src/includes/templates/admin/menu-pages/options/default.php:122
@@ -324,7 +291,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:126
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:126
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:126
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:126
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:126
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:126
 #: src/includes/templates/admin/menu-pages/options/default.php:126
@@ -334,7 +300,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:127
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:127
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:127
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:127
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:127
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:127
 #: src/includes/templates/admin/menu-pages/options/default.php:127
@@ -347,8 +312,6 @@ msgstr ""
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:138
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:128
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:138
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:128
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:138
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:128
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:138
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:128
@@ -364,8 +327,6 @@ msgstr ""
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:139
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:129
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:139
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:129
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:139
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:129
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:139
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:129
@@ -378,7 +339,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:136
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:136
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:136
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:136
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:136
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:136
 #: src/includes/templates/admin/menu-pages/options/default.php:136
@@ -388,7 +348,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:137
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:137
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:137
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:137
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:137
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:137
 #: src/includes/templates/admin/menu-pages/options/default.php:137
@@ -398,7 +357,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:146
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:146
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:146
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:146
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:146
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:146
 #: src/includes/templates/admin/menu-pages/options/default.php:146
@@ -408,7 +366,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:147
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:147
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:147
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:147
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:147
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:147
 #: src/includes/templates/admin/menu-pages/options/default.php:147
@@ -418,7 +375,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:148
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:148
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:148
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/options/default.php:148
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/options/default.php:148
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/options/default.php:148
 #: src/includes/templates/admin/menu-pages/options/default.php:148
@@ -428,7 +384,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:37
@@ -438,7 +393,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:38
@@ -448,7 +402,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:49
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:49
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:49
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:49
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:49
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:49
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:49
@@ -458,7 +411,6 @@ msgstr ""
 #: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:50
 #: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:50
 #: .~build/wp-tocify/.~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:50
-#: .~build/wp-tocify/.~build/wp-tocify-repo/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:50
 #: .~build/wp-tocify/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:50
 #: .~build/wp-tocify-pro/src/includes/templates/admin/menu-pages/post-meta-box/settings.php:50
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:50
