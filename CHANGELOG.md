@@ -1,6 +1,7 @@
 ## [coming soon]
 
 - Slightly reduce the built-in default TOC heading font size so that it consumes less horizontal space.
+- Removing `overflow: hidden` from headings whenever TOC is being displayed. Rely upon margin alone.
 
 ## v160731.37612
 
