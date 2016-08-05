@@ -1,3 +1,7 @@
+## [coming soon]
+
+- Slightly reduce the built-in default TOC heading font size so that it consumes less horizontal space.
+
 ## v160731.37612
 
 - Enhancing options page.
