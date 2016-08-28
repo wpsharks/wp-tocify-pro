@@ -1,6 +1,6 @@
 <?php
 /**
- * Scripts/styles.
+ * Styles/scripts.
  *
  * @author @jaswsinc
  * @copyright WP Sharks™
@@ -29,16 +29,28 @@ use function assert as debug;
 use function get_defined_vars as vars;
 
 /**
- * Scripts/styles.
+ * Styles/scripts.
  *
- * @since 160724.1960 Initial release.
+ * @since 160826 Styles/scripts.
  */
-class ScriptsStyles extends SCoreClasses\SCore\Base\Core
+class StylesScripts extends SCoreClasses\SCore\Base\Core
 {
+    /**
+     * Is applicable?
+     *
+     * @since 160826 Styles/scripts.
+     *
+     * @return bool True if applicable.
+     */
+    public function isApplicable(): bool
+    {
+        return (bool) $this->applicableSettings();
+    }
+
     /**
      * On body classes.
      *
-     * @since 160724.1960 Initial release.
+     * @since 160826 Styles/scripts.
      *
      * @param array $classes Body classes.
      *
@@ -56,11 +68,13 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
     /**
      * Scripts/styles.
      *
-     * @since 160724.1960 Initial release.
+     * @since 160826 Styles/scripts.
      */
     public function onWpEnqueueScripts()
     {
-        if (!($settings = $this->isApplicable())) {
+        if (!$this->isApplicable()) {
+            return; // Not applicable.
+        } elseif (!($settings = $this->applicableSettings())) {
             return; // Not applicable.
         }
         $brand_slug    = $this->App->Config->©brand['©slug'];
@@ -86,43 +100,58 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
     }
 
     /**
-     * Is applicable?
+     * Applicable settings.
      *
-     * @since 160724.1960 Initial release.
+     * @since 160826 Styles/scripts.
      *
      * @return array Settings if applicable.
      */
-    protected function isApplicable(): array
+    protected function applicableSettings(): array
     {
-        if (($is = &$this->cacheKey(__FUNCTION__)) !== null) {
-            return $is; // Cached this already.
-        } elseif (!is_singular(/* post type. */)) {
-            return $is = []; // Not applicable.
+        if (($settings = &$this->cacheKey(__FUNCTION__)) !== null) {
+            return $settings; // Cached this already.
+        } elseif (!is_singular()) {
+            return $settings = [];
         }
-        $context        = s::getOption('context'); // e.g., `.entry-content`, etc.
-        $anchors_enable = s::getPostMeta(null, '_anchors_enable', s::getOption('default_anchors_enable'));
+        $is_applicable_filter = s::applyFilters('is_applicable', null);
+        // NOTE: This can be used to force a `true` or `false` value.
+
+        if ($is_applicable_filter === false) {
+            return $settings = []; // Not applicable.
+        }
+        $context        = s::getOption('context'); // e.g., `.entry-content`
+        $anchors_enable = (int) s::getPostMeta(null, '_anchors_enable', s::getOption('default_anchors_enable'));
+        $anchors_enable = !$anchors_enable && $is_applicable_filter === true ? 1 : $anchors_enable;
 
         if (!$context || !$anchors_enable) {
-            return $is = []; // Not applicable.
+            return $settings = []; // Not applicable.
         }
-        $current_post_type  = get_post_type();
-        $include_post_types = s::getOption('include_post_types');
-        $exclude_post_types = s::getOption('exclude_post_types');
+        if ($is_applicable_filter !== true) {
+            $current_post_type  = get_post_type();
+            $include_post_types = s::getOption('include_post_types');
+            $exclude_post_types = s::getOption('exclude_post_types');
 
-        if ($include_post_types && !in_array($current_post_type, $include_post_types, true)) {
-            return $is = []; // Not applicable.
-        } elseif ($exclude_post_types && in_array($current_post_type, $exclude_post_types, true)) {
-            return $is = []; // Not applicable.
+            if ($include_post_types && !in_array($current_post_type, $include_post_types, true)) {
+                return $settings = []; // Not applicable.
+            } elseif ($exclude_post_types && in_array($current_post_type, $exclude_post_types, true)) {
+                return $settings = []; // Not applicable.
+            }
         }
-        $toc_enable = s::getPostMeta(null, '_toc_enable', s::getOption('default_toc_enable'));
+        $toc_enable           = (string) s::getPostMeta(null, '_toc_enable', s::getOption('default_toc_enable'));
+        $toc_max_heading_size = (int) s::getPostMeta(null, '_toc_max_heading_size', s::getOption('default_toc_max_heading_size'));
 
-        return $is = ['context' => $context, 'anchorsEnable' => $anchors_enable, 'tocEnable' => $toc_enable];
+        return $settings = s::applyFilters('script_settings', [
+            'context'           => $context,
+            'anchorsEnable'     => $anchors_enable,
+            'tocEnable'         => $toc_enable,
+            'tocMaxHeadingSize' => $toc_max_heading_size,
+        ]);
     }
 
     /**
      * Format symbol for CSS `content:` usage.
      *
-     * @since 160724.1960 Initial release.
+     * @since 160826 Styles/scripts.
      *
      * @param string $symbol Symbol to format.
      *
@@ -130,7 +159,7 @@ class ScriptsStyles extends SCoreClasses\SCore\Base\Core
      */
     protected function formatSymbol(string $symbol): string
     {
-        if (preg_match('/\.[^\/.]+$/ui', $symbol)) {
+        if (preg_match('/\.[^\/.]+$/u', $symbol)) {
             return 'url('.c::sQuote($symbol).')';
         }
         return c::sQuote($symbol);

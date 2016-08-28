@@ -1,12 +1,12 @@
 <?php
 /**
- * Facades.
+ * Styles/scripts.
  *
  * @author @jaswsinc
  * @copyright WP Sharks™
  */
 declare (strict_types = 1);
-namespace WebSharks\WpSharks\WpTocify\Pro\Classes\Base;
+namespace WebSharks\WpSharks\WpTocify\Pro\Traits\Facades;
 
 use WebSharks\WpSharks\WpTocify\Pro\Classes;
 use WebSharks\WpSharks\WpTocify\Pro\Interfaces;
@@ -29,11 +29,21 @@ use function assert as debug;
 use function get_defined_vars as vars;
 
 /**
- * Pseudo-static facades.
+ * Styles/scripts.
  *
- * @since 160718 Initial release.
+ * @since 160826
  */
-abstract class Facades
+trait StylesScripts
 {
-    use Traits\Facades\StylesScripts;
+    /**
+     * @since 160826 Styles/scripts.
+     *
+     * @param mixed ...$args Variadic args to underlying utility.
+     *
+     * @see Classes\Utils\StylesScripts::isApplicable()
+     */
+    public static function isApplicable(...$args)
+    {
+        return $GLOBALS[static::class]->Utils->StylesScripts->isApplicable(...$args);
+    }
 }

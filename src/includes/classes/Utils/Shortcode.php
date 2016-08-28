@@ -50,9 +50,16 @@ class Shortcode extends SCoreClasses\SCore\Base\Core
             'float' => 'none',
             'style' => 'default',
         ];
+        $atts      = (array) $atts;
+        $content   = (string) $content;
+        $shortcode = (string) $shortcode;
+
         $atts  = shortcode_atts($default_atts, $atts, $shortcode);
         $class = $this->App->Config->©brand['©slug'].'-toc-shortcode';
 
+        if (!a::isApplicable()) {
+            return ''; // Not applicable.
+        }
         return '<div class="'.esc_attr($class).'" data-atts="'.esc_attr(json_encode($atts)).'" style="display:none;"></div>';
     }
 }

@@ -8,66 +8,102 @@
      */
     var x = sQVXAaHbXuTCEnBDLBHQpNkxWYfJdfmVData;
 
-    /*
-     * Context.
+    /**
+     * Widget container.
      */
-    var getContext = function () {
-      var $context, // Initialize only.
-        contexts = x.settings.context.split(',');
+    var $widget = $('.' + x.brand.slug + '-toc-widget');
 
-      $.each(contexts, function (_i, _context) {
-        _context = $.trim(_context);
-        if (($context = $(_context).first()).length) {
-          return false; // Break iteration.
+    /**
+     * Widget TOC content div.
+     */
+    var $widgetToc = $widget.find('.-toc');
+
+    /**
+     * Shortcode container.
+     */
+    var $shortcode = $('.' + x.brand.slug + '-toc-shortcode');
+
+    /**
+     * Context via logic in function.
+     */
+    var $context = (function () {
+      var $_context, // Initialize only.
+        _contexts = x.settings.context.split(',');
+
+      $.each(_contexts, function (_i, _context) {
+        _context = $.trim(_context); // Trim whitespace.
+        if (_context && ($_context = $(_context).first()).length) {
+          return false; // Found context; break iteration.
         }
       });
-      return $context || $();
-    };
+      return $_context || $();
+    })();
 
     /**
      * Generator.
      */
     var maybeGenerate = function () {
-      var $context; // Initialize.
 
       if (!$('.' + x.brand.slug).length) {
+        $widget.remove();
+        $shortcode.remove();
         return; // Not enabled here.
-      } else if (!x.settings.anchorsEnable || x.settings.anchorsEnable === '0') {
+      } else if (!x.settings.anchorsEnable) {
+        $widget.remove();
+        $shortcode.remove();
         return; // Not enabled here.
-      } else if (!($context = getContext()).length) {
+      } else if (!$context.length) {
+        $widget.remove();
+        $shortcode.remove();
         return; // Not possible.
       }
 
       var headings = [],
-        tocUl = '',
-        _childUlTagsOpen = 0,
-        _prevHeading,
-        _heading,
-        _i;
+        tocHeadings = [],
+        toc = '';
+
+      var _tocChildUlTagsOpen = 0,
+        _prevTocHeading = null,
+        _tocHeading = null,
+        _i = 0;
 
       $context.find('h1, h2, h3, h4, h5, h6')
         .each(function (index) {
-          var $heading = $(this),
-            title = $.trim($heading.text().replace(/\s+/g, ' ')),
-            hash = 'toc-' + crc32($.trim(index + title)),
-            size = $heading.prop('tagName').substr(1),
-            $a = $('<a />'); // Initialize.
+          var $heading = $(this), // This heading.
+            title = $.trim($heading.text().replace(/\s+/g, ' '));
+
+          var hash = 'toc-' + crc32($.trim(index + title)),
+            size = parseInt($heading.prop('tagName').substr(1));
+
+          var $a = $('<a />'); // Initialize `<a />` tag.
 
           headings.push({
             hash: hash,
             size: size,
             title: title
           });
+          if (!x.settings.tocMaxHeadingSize || size <= x.settings.tocMaxHeadingSize) {
+            // `0` = All headings; else check max size.
+            tocHeadings.push({
+              hash: hash,
+              size: size,
+              title: title
+            });
+          }
           $a.attr('id', hash).attr('href', '#' + hash)
             .addClass(x.brand.slug + '-anchor');
 
           $heading.addClass(x.brand.slug + '-heading').append($a);
         });
 
-      if (!headings.length) {
-        return; // Not headings on this page.
+      if (!headings.length || !tocHeadings.length) {
+        $widget.remove();
+        $shortcode.remove();
+        return;
       } else if (!x.settings.tocEnable || x.settings.tocEnable === '0') {
-        return; // The TOC is not enabled on this page.
+        $widget.remove();
+        $shortcode.remove();
+        return;
       }
 
       toc = '<div class="' + escHtml(x.brand.slug + '-toc') + '">';
@@ -75,31 +111,31 @@
       toc += '<h4>' + escHtml(x.i18n.tocHeading) + '</h4>';
       toc += '<ul>'; // Begin table of contents.
 
-      for (_i = 0; _i < headings.length; _i++) {
-        _heading = headings[_i];
+      for (_i = 0; _i < tocHeadings.length; _i++) {
+        _tocHeading = tocHeadings[_i];
 
-        if ((_prevHeading = _i > 0 ? headings[_i - 1] : null)) {
-          if (_heading.size > _prevHeading.size) {
+        if ((_prevTocHeading = _i > 0 ? tocHeadings[_i - 1] : null)) {
+          if (_tocHeading.size > _prevTocHeading.size) {
 
             toc += '<ul>';
-            _childUlTagsOpen++;
+            _tocChildUlTagsOpen++;
 
-          } else if (_heading.size < _prevHeading.size) {
+          } else if (_tocHeading.size < _prevTocHeading.size) {
 
-            toc += '</li>'; // Close previous.
+            toc += '</li>'; // Close.
 
-            if (_childUlTagsOpen > 0) {
-              toc += repeat('</ul></li>', _childUlTagsOpen);
+            if (_tocChildUlTagsOpen > 0) {
+              toc += repeat('</ul></li>', _tocChildUlTagsOpen);
             }
-            _childUlTagsOpen = 0;
+            _tocChildUlTagsOpen = 0; // Reset depth now.
 
           } else {
-            toc += '</li>';
+            toc += '</li>'; // Close.
           }
         }
         toc += '<li>'; // New heading.
-        toc += '<a href="#' + escHtml(_heading.hash) + '" title="' + escHtml(_heading.title) + '">' +
-          escHtml(_heading.title) +
+        toc += '<a href="#' + escHtml(_tocHeading.hash) + '" title="' + escHtml(_tocHeading.title) + '">' +
+          escHtml(_tocHeading.title) +
           '</a>';
       }
       toc += '</li>';
@@ -107,31 +143,47 @@
       toc += '</div>';
       toc += '</div>';
 
-      injectToc($context, $(toc));
+      injectToc(toc);
     };
 
     /**
      * TOC injector.
      */
-    var injectToc = function ($context, $toc) {
-      if (x.settings.tocEnable === 'via-shortcode') {
+    var injectToc = function (toc) {
+      var $toc = $(toc); // Convert to jQuery.
 
-        var $shortcode = $('.' + x.brand.slug + '-toc-shortcode'),
-          atts = $shortcode.data('atts');
+      if (x.settings.tocEnable === 'via-widget') {
+        $shortcode.remove(); // Not in use.
+
+        if (!$widgetToc.length) {
+          return; // Widget missing.
+        }
+        $widgetToc.replaceWith($toc);
+        //
+      } else if (x.settings.tocEnable === 'via-shortcode') {
+        $widget.remove(); // Not in use.
 
         if (!$shortcode.length) {
-          return; // No shortcode in this article.
+          return; // Shortcode missing.
         }
+        var atts = $shortcode.data('atts');
+
         if (typeof atts === 'object') {
           $.each(atts, function (_att, _val) {
+            _att = _att.toLowerCase().replace(/[^a-z0-9]/g, '-');
+            _val = _val.toLowerCase().replace(/[^a-z0-9]/g, '-');
             $toc.addClass('-' + _att + '-' + _val);
           });
         }
         $shortcode.replaceWith($toc);
+        //
+      } else { // Default behavior.
+        $widget.remove(); // Not in use.
+        $shortcode.remove(); // Not in use.
 
-      } else { // Use setting as classes.
-        $toc.addClass(x.settings.tocEnable);
-        $context.prepend($toc);
+        // This creates a prefixed list of CSS classes using a `-`.
+        $toc.addClass('-' + x.settings.tocEnable.replace(/\s+/g, ' -'));
+        $context.prepend($toc); // Prepend to `$context`.
       }
     };
 

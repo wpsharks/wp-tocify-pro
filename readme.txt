@@ -1,6 +1,6 @@
 === WP Tocify Pro ===
 
-Stable tag: 160805.30078
+Stable tag: 160828.36079
 
 Tested up to: 4.6
 Requires at least: 4.5.3

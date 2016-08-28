@@ -39,7 +39,7 @@ $Form = $this->s::MenuPageForm('§save-options');
 
         <?= $Form->inputRow([
             'label' => __('JS/CSS Content Selector', 'wp-tocify'),
-            'tip'   => __('This must be a valid CSS selector. It\'s used by jQuery to find the DOM \'content\'.<hr />Many WordPress themes use <code>.entry-content</code>, but this is not univeral. You may need to customize this depending on the theme you\'re using.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority.', 'wp-tocify'),
+            'tip'   => __('This must be a valid CSS selector. It\'s used by jQuery to find the DOM \'content\'.<hr />Many WordPress themes use <code>.entry-content</code>, but you may need to change this so it works with your theme.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority.', 'wp-tocify'),
             'note'  => __('Widening the scope of this selector may pick up additional headings like an &lt;h1&gt; tag.', 'wp-tocify'),
 
             'name'  => 'context',
@@ -54,23 +54,42 @@ $Form = $this->s::MenuPageForm('§save-options');
             'name'    => 'default_anchors_enable',
             'value'   => s::getOption('default_anchors_enable'),
             'options' => [
-                '0' => __('No', 'wp-tocify'),
-                '1' => __('Yes', 'wp-tocify'),
+                0 => __('No', 'wp-tocify'),
+                1 => __('Yes', 'wp-tocify'),
             ],
         ]); ?>
 
         <?= $Form->selectRow([
             'label' => __('Enable TOC by Default?', 'wp-tocify'),
             'tip'   => sprintf(__('When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls the Table of Contents being shown in the article (by default), or not.', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
-            'note'  => __('Choosing <strong>via [toc] shortcode</strong> allows you to insert a TOC whenever and wherever you want.<pre style="margin:.5em 0 0 .5em;">[toc float="right|left|none" style="none|default"]'."\n".' Example: [toc float="right"] at the top of your article.'."\n".' Example: [toc style="none"] to get unstyled list items anywhere.</pre>'),
+            'note'  => sprintf(__('Choosing <strong>\'via sidebar widget\'</strong> depends on you adding the <a href="%1$s" target="_blank">TOC Widget</a> to a Sidebar. Choosing <strong>\'via [toc] shortcode\'</strong> allows you to insert a TOC wherever you want using the <a href="%2$s" target="_blank">[toc] shortcode</a>.', 'wp-tocify'), esc_url(s::brandUrl('/kb-article/toc-widget')), esc_url(s::brandUrl('/kb-article/toc-shortcode'))),
 
             'name'    => 'default_toc_enable',
             'value'   => s::getOption('default_toc_enable'),
             'options' => [
-                '0'                           => __('No', 'wp-tocify'),
-                '-float-right -style-default' => __('Yes (float right)', 'wp-tocify'),
-                '-float-left -style-default'  => __('Yes (float left)', 'wp-tocify'),
-                'via-shortcode'               => __('Yes (via [toc] shortcode)', 'wp-tocify'),
+                '0'                         => __('No', 'wp-tocify'),
+                'float-left style-default'  => __('Yes (float left)', 'wp-tocify'),
+                'float-right style-default' => __('Yes (float right)', 'wp-tocify'),
+                'via-widget'                => __('Yes (via sidebar widget)', 'wp-tocify'),
+                'via-shortcode'             => __('Yes (via [toc] shortcode)', 'wp-tocify'),
+            ],
+        ]); ?>
+
+        <?= $Form->selectRow([
+            'label' => __('TOC: Default Max Heading Size', 'wp-tocify'),
+            'tip'   => sprintf(__('When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This is the maximum heading size that will be displayed in a Table of Contents, by default.', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
+            'note'  => __('For instance, setting this to <code>h3</code> means that <code>h4</code>, <code>h5</code>, <code>h6</code> headings will not be shown in the TOC.', 'wp-tocify'),
+
+            'name'    => 'default_toc_max_heading_size',
+            'value'   => s::getOption('default_toc_max_heading_size'),
+            'options' => [
+                0 => __('Show All Headings', 'wp-tocify'),
+                1 => __('<h1>', 'wp-tocify'),
+                2 => __('<h2>', 'wp-tocify'),
+                3 => __('<h3>', 'wp-tocify'),
+                4 => __('<h4>', 'wp-tocify'),
+                5 => __('<h5>', 'wp-tocify'),
+                6 => __('<h6>', 'wp-tocify'),
             ],
         ]); ?>
 
