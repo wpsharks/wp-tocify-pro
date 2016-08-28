@@ -1,29 +1,49 @@
 (function ($) {
-  /**
+  /*
+   * Window.
+   */
+  var $window = $(window);
+
+  /*
+   * Document.
+   */
+  var $document = $(document);
+
+  /*
    * On DOM ready.
    */
-  var onReady = function () {
-    /**
+  $document.ready(function () {
+    /*
      * Plugin-specific data.
      */
     var x = sQVXAaHbXuTCEnBDLBHQpNkxWYfJdfmVData;
 
-    /**
+    /*
+     * HTML/body tags.
+     */
+    var $htmlBody = $('html,body');
+
+    /*
+     * Admin bar.
+     */
+    var $adminBar = $('#wpadminbar');
+
+    /*
      * Widget container.
      */
     var $widget = $('.' + x.brand.slug + '-toc-widget');
 
-    /**
+    /*
      * Widget TOC content div.
      */
     var $widgetToc = $widget.find('.-toc');
 
-    /**
+    /*
      * Shortcode container.
      */
     var $shortcode = $('.' + x.brand.slug + '-toc-shortcode');
 
-    /**
+    /*
      * Context via logic in function.
      */
     var $context = (function () {
@@ -39,7 +59,7 @@
       return $_context || $();
     })();
 
-    /**
+    /*
      * Generator.
      */
     var maybeGenerate = function () {
@@ -146,7 +166,7 @@
       injectToc(toc);
     };
 
-    /**
+    /*
      * TOC injector.
      */
     var injectToc = function (toc) {
@@ -187,7 +207,22 @@
       }
     };
 
-    /**
+    /*
+     * Maybe adjust hash location.
+     */
+    var maybeAdjustHashLocation = function () {
+      if (!x.settings.anchorsEnable) {
+        return; // Not applicable.
+      } else if (!x.settings.anchorsAdjustScrollPos) {
+        return; // Not applicable.
+      } else if (!location.hash || !location.hash.length) {
+        return; // Not applicable.
+      }
+      var offset = 28 + ($adminBar.length ? 28 : 0);
+      $htmlBody.scrollTop($window.scrollTop() - offset);
+    };
+
+    /*
      * String repeater.
      */
     var repeat = function (str, times) {
@@ -203,7 +238,7 @@
       return repeated;
     };
 
-    /**
+    /*
      * Escape HTML special chars.
      */
     var escHtml = function (str) {
@@ -216,7 +251,7 @@
       return str;
     };
 
-    /**
+    /*
      * CRC32 checksum.
      */
     var crc32 = function (str) {
@@ -241,9 +276,11 @@
      * Maybe generate.
      */
     maybeGenerate();
-  };
-  /*
-   * On DOM ready.
-   */
-  $(document).ready(onReady);
+
+    /*
+     * On hash change.
+     */
+    setTimeout(maybeAdjustHashLocation, 100);
+    $window.on('hashchange', maybeAdjustHashLocation);
+  });
 })(jQuery);

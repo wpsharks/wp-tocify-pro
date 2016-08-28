@@ -1,6 +1,7 @@
-## [coming soon]
+## $v
 
-- Adding new TOC widget and new TOC display option (via sidebar widget).
+- New configurable option: 'Auto-Adjust Scroll Position?'.
+- New TOC widget and new TOC display option (via sidebar widget).
 - New option that allows a minimum number of headings to be required for a TOC to be shown.
 - New option that allows for control over the max heading size to be displayed in any given TOC.
 - Slightly reduce the built-in default TOC heading font size so that it consumes less horizontal space.

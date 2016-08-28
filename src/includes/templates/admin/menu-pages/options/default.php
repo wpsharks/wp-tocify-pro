@@ -46,6 +46,8 @@ $Form = $this->s::MenuPageForm('§save-options');
             'value' => s::getOption('context'),
         ]); ?>
 
+        <tr><td colspan="2" style="padding:0;"><hr /></td></tr>
+
         <?= $Form->selectRow([
             'label' => __('Enable Anchors by Default?', 'wp-tocify'),
             'tip'   => sprintf(__('When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls h[1-6] headings being anchored in the article (by default), or not.', 'wp-tocify'), esc_html($this->App->Config->©brand['©name'])),
@@ -58,6 +60,21 @@ $Form = $this->s::MenuPageForm('§save-options');
                 1 => __('Yes', 'wp-tocify'),
             ],
         ]); ?>
+
+        <?= $Form->selectRow([
+            'label' => __('Auto-Adjust Scroll Position?', 'wp-tocify'),
+            'tip'   => __('Automatically adjust the scroll position offset when moving to an anchored location?<hr />This can improve the experience for users who also see the Admin Bar in WordPress; i.e., an anchored location should not be covered by the Admin Bar.', 'wp-tocify'),
+            'note'  => __('It is suggested that you enable this so headings will align properly with the WordPress Admin Bar.', 'wp-tocify'),
+
+            'name'    => 'default_anchors_adjust_scroll_pos',
+            'value'   => s::getOption('default_anchors_adjust_scroll_pos'),
+            'options' => [
+                0 => __('No', 'wp-tocify'),
+                1 => __('Yes', 'wp-tocify'),
+            ],
+        ]); ?>
+
+        <tr><td colspan="2" style="padding:0;"><hr /></td></tr>
 
         <?= $Form->selectRow([
             'label' => __('Enable TOC by Default?', 'wp-tocify'),

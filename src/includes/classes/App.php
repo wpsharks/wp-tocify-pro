@@ -83,7 +83,9 @@ class App extends SCoreClasses\App
 
             '§pro_option_keys' => [],
             '§default_options' => [
-                'default_anchors_enable'       => 1,
+                'default_anchors_enable'            => 1,
+                'default_anchors_adjust_scroll_pos' => 1,
+
                 'default_toc_enable'           => '0',
                 'default_toc_max_heading_size' => 3,
                 'default_toc_min_headings'     => 3,

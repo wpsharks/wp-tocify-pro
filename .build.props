@@ -3,6 +3,7 @@ project_title                               = WP Tocify Pro
 project_owner                               = websharks
 project_slug                                = wp-tocify-pro
 project_text_domain                         = wp-tocify
+project_slack_channel                       = wp-tocify
 
 project_namespace                           = WebSharks\\WpSharks\\WpTocify\\Pro
 project_sub_namespace                       = WpSharksWpTocifyPro
