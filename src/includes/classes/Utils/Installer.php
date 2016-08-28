@@ -31,14 +31,14 @@ use function get_defined_vars as vars;
 /**
  * Install utils.
  *
- * @since $v Initial release.
+ * @since 160828.48363 Initial release.
  */
 class Installer extends SCoreClasses\SCore\Base\Core
 {
     /**
      * Version-specific upgrades.
      *
-     * @since $v VS upgrades.
+     * @since 160828.48363 VS upgrades.
      *
      * @param array $history Install history.
      */

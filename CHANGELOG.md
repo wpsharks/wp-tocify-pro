@@ -1,4 +1,4 @@
-## $v
+## v160828.48363
 
 - New configurable option: 'Auto-Adjust Scroll Position?'.
 - New TOC widget and new TOC display option (via sidebar widget).

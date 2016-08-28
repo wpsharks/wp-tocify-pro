@@ -42,7 +42,7 @@ class App extends SCoreClasses\App
      *
      * @var string Version.
      */
-    const VERSION = '160828.41688'; //v//
+    const VERSION = '160828.48363'; //v//
 
     /**
      * Constructor.
@@ -113,7 +113,7 @@ class App extends SCoreClasses\App
     /**
      * Early hook setup handler.
      *
-     * @since $v Install utilities.
+     * @since 160828.48363 Install utilities.
      */
     protected function onSetupEarlyHooks()
     {
