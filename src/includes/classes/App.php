@@ -42,7 +42,7 @@ class App extends SCoreClasses\App
      *
      * @var string Version.
      */
-    const VERSION = '160828.37471'; //v//
+    const VERSION = '160828.38753'; //v//
 
     /**
      * Constructor.
@@ -105,6 +105,18 @@ class App extends SCoreClasses\App
             ],
         ];
         parent::__construct($instance_base, $instance);
+    }
+
+    /**
+     * Early hook setup handler.
+     *
+     * @since $v Install utilities.
+     */
+    protected function onSetupEarlyHooks()
+    {
+        parent::onSetupEarlyHooks();
+
+        s::addAction('vs_upgrades', [$this->Utils->Installer, 'onVsUpgrades']);
     }
 
     /**
