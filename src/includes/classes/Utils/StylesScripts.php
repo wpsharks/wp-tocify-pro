@@ -141,12 +141,14 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
         $toc_enable           = (string) s::getPostMeta(null, '_toc_enable', s::getOption('default_toc_enable'));
         $toc_enable           = preg_replace(['/^\-/u', '/\s+\-/u'], ['', ' '], $toc_enable); // Back compat. Strip `-` dashes.
         $toc_max_heading_size = (int) s::getPostMeta(null, '_toc_max_heading_size', s::getOption('default_toc_max_heading_size'));
+        $toc_min_headings     = max(1, s::getOption('default_toc_min_headings')); // No post-specific meta value at this time.
 
         return $settings = s::applyFilters('script_settings', [
             'context'           => $context,
             'anchorsEnable'     => $anchors_enable,
             'tocEnable'         => $toc_enable,
             'tocMaxHeadingSize' => $toc_max_heading_size,
+            'tocMinHeadings'    => $toc_min_headings,
         ]);
     }
 

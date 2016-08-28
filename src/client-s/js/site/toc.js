@@ -96,11 +96,11 @@
           $heading.addClass(x.brand.slug + '-heading').append($a);
         });
 
-      if (!headings.length || !tocHeadings.length) {
+      if (!x.settings.tocEnable || x.settings.tocEnable === '0') {
         $widget.remove();
         $shortcode.remove();
         return;
-      } else if (!x.settings.tocEnable || x.settings.tocEnable === '0') {
+      } else if (!tocHeadings.length || tocHeadings.length < x.settings.tocMinHeadings) {
         $widget.remove();
         $shortcode.remove();
         return;

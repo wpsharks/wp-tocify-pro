@@ -1,7 +1,8 @@
 ## [coming soon]
 
-- New option that allows for control over the max heading size to be displayed in any given TOC.
 - Adding new TOC widget and new TOC display option (via sidebar widget).
+- New option that allows a minimum number of headings to be required for a TOC to be shown.
+- New option that allows for control over the max heading size to be displayed in any given TOC.
 - Slightly reduce the built-in default TOC heading font size so that it consumes less horizontal space.
 - Removing `overflow: hidden` from headings whenever TOC is being displayed. Rely upon margin alone.
 - Remove CSS `outline` from headings that are anchored to avoid a box when it's focused by an anchor.

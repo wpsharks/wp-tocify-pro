@@ -93,6 +93,16 @@ $Form = $this->s::MenuPageForm('§save-options');
             ],
         ]); ?>
 
+        <?= $Form->inputRow([
+            'type'  => 'number',
+            'label' => __('TOC: Minimum Required Headings', 'wp-tocify'),
+            'tip'   => __('This forces X number of headings to exist in any given article for a TOC to be displayed; i.e., even when a TOC is enabled.<hr />For instance, setting this to a value of <code>3</code> will hide the TOC where there are less than 3 items.', 'wp-tocify'),
+            'note'  => __('e.g., Setting this to a value of <code>3</code> will hide the TOC where there are less than 3 items.', 'wp-tocify'),
+
+            'name'  => 'default_toc_min_headings',
+            'value' => s::getOption('default_toc_min_headings'),
+        ]); ?>
+
     <?= $Form->closeTable(); ?>
 
     <hr />
