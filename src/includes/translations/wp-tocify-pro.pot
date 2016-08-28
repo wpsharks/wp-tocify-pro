@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WP Tocify Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Tocify Pro 160828.36079\n"
+"Project-Id-Version: WP Tocify Pro 160828.37471\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-tocify-pro\n"
-"POT-Creation-Date: 2016-08-28 10:01:24+00:00\n"
+"POT-Creation-Date: 2016-08-28 10:24:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,11 +30,11 @@ msgstr ""
 msgid "Restore Default Options"
 msgstr ""
 
-#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/classes/Utils/StylesScripts.php:95
-#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/classes/Utils/StylesScripts.php:95
-#: .~build/wp-tocify/.~build/wp-tocify/src/includes/classes/Utils/StylesScripts.php:95
-#: .~build/wp-tocify/src/includes/classes/Utils/StylesScripts.php:95
-#: .~build/wp-tocify-pro/src/includes/classes/Utils/StylesScripts.php:95
+#: .~build/.~/pkg-dirs/for-zip-tgz/wp-tocify-pro/src/includes/classes/Utils/StylesScripts.php:97
+#: .~build/wp-tocify/.~build/.~/pkg-dirs/for-zip-tgz/wp-tocify/src/includes/classes/Utils/StylesScripts.php:97
+#: .~build/wp-tocify/.~build/wp-tocify/src/includes/classes/Utils/StylesScripts.php:97
+#: .~build/wp-tocify/src/includes/classes/Utils/StylesScripts.php:97
+#: .~build/wp-tocify-pro/src/includes/classes/Utils/StylesScripts.php:97
 #: src/includes/classes/Utils/StylesScripts.php:97
 msgid "Table of Contents"
 msgstr ""
