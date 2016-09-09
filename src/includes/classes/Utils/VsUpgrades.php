@@ -45,6 +45,7 @@ class VsUpgrades extends SCoreClasses\SCore\Base\Core
         // Back compat. Strip leading `-` dashes.
         $default_toc_enable = s::getOption('default_toc_enable');
         $default_toc_enable = preg_replace(['/^\-/u', '/\s+\-/u'], ['', ' '], $default_toc_enable);
+
         s::updateOptions(compact('default_toc_enable'));
     }
 }

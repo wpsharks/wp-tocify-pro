@@ -51,9 +51,8 @@ $Form = $this->s::postMetaBoxForm('settings');
 
         'name'       => '_toc_enable',
         'depends_on' => ['_anchors_enable'],
-        // Back compat. Strip leading `-` dashes so meta value matches available options.
-        'value'   => preg_replace(['/^\-/u', '/\s+\-/u'], ['', ' '], (string) s::getPostMeta($post_id, '_toc_enable', s::getOption('default_toc_enable'))),
-        'options' => [
+        'value'      => s::getPostMeta($post_id, '_toc_enable', s::getOption('default_toc_enable')),
+        'options'    => [
             '0'                         => __('No', 'wp-tocify'),
             'float-left style-default'  => __('Yes (float left)', 'wp-tocify'),
             'float-right style-default' => __('Yes (float right)', 'wp-tocify'),

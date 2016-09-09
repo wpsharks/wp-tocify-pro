@@ -91,7 +91,7 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
                 'slug' => $this->App->Config->©brand['©slug'],
                 'var'  => $this->App->Config->©brand['©var'],
             ],
-            'settings' => $settings, // Via `isApplicable()`.
+            'settings' => $settings, // Via `applicableSettings()`.
 
             'i18n' => [
                 'tocHeading' => __('Table of Contents', 'wp-tocify'),
@@ -138,9 +138,7 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
                 return $settings = []; // Not applicable.
             }
         }
-        // Back compat. Strip leading `-` dashes so meta value is handled properly.
         $toc_enable           = (string) s::getPostMeta(null, '_toc_enable', s::getOption('default_toc_enable'));
-        $toc_enable           = preg_replace(['/^\-/u', '/\s+\-/u'], ['', ' '], $toc_enable); // Back compat. Strip `-` dashes.
         $toc_max_heading_size = (int) s::getPostMeta(null, '_toc_max_heading_size', s::getOption('default_toc_max_heading_size'));
         $toc_min_headings     = max(1, s::getOption('default_toc_min_headings'));
 
