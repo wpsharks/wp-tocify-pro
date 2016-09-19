@@ -191,7 +191,7 @@ $Form = $this->s::MenuPageForm('§save-options');
         <?= $Form->textareaRow([
             'label' => __('Custom Styles', 'wp-tocify'),
             'tip'   => __('e.g., Add lines that customize style attributes such as <code>width:</code>, <code>color:</code>, etc.', 'wp-tocify'),
-            'note'  => __('Use <a href="https://css-tricks.com/when-using-important-is-the-right-choice/" target="_blank"><code>!important</code></a> to override default structural styles.', 'wp-tocify'),
+            'note'  => sprintf(__('Use <a href="%1$s" target="_blank"><code>!important</code></a> to override default structural styles.', 'wp-tocify'), esc_url(s::coreUrl('/r/css-important'))),
 
             'name'  => 'custom_styles',
             'value' => s::getOption('custom_styles'),
