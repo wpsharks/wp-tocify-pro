@@ -1,4 +1,4 @@
-## [coming soon]
+## $v
 
 - Remove old back compat. handlers for `-` prefixed classes in style option values.
 - Use percentages for TOC margin instead of `em` units; making it easier to style surrounding elements.
