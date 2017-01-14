@@ -1,3 +1,7 @@
+## $v
+
+- Enhancing security by removing `basename(__FILE__)` from direct access notices.
+
 ## v160919.17597
 
 - Remove old back compat. handlers for `-` prefixed classes in style option values.
