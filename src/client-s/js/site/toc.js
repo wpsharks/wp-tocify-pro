@@ -16,7 +16,7 @@
     /*
      * Plugin-specific data.
      */
-    var x = sQVXAaHbXuTCEnBDLBHQpNkxWYfJdfmVData;
+    var x = mzytpzuu784a54qu8dcwzuhvz623vhdsData;
 
     /*
      * HTML/body tags.

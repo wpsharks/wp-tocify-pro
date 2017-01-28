@@ -5,7 +5,7 @@
  * @author @jaswsinc
  * @copyright WP Sharks™
  */
-declare (strict_types = 1);
+declare(strict_types=1);
 namespace WebSharks\WpSharks\WpTocify\Pro\Classes\Utils;
 
 use WebSharks\WpSharks\WpTocify\Pro\Classes;
@@ -86,17 +86,21 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
         wp_add_inline_style($this->App->Config->©brand['©slug'], $inline_styles);
 
         wp_enqueue_script($this->App->Config->©brand['©slug'], c::appUrl('/client-s/js/site/toc.min.js'), ['jquery'], $this->App::VERSION, true);
-        wp_localize_script($this->App->Config->©brand['©slug'], 'sQVXAaHbXuTCEnBDLBHQpNkxWYfJdfmVData', [
-            'brand' => [
-                'slug' => $this->App->Config->©brand['©slug'],
-                'var'  => $this->App->Config->©brand['©var'],
-            ],
-            'settings' => $settings, // Via `applicableSettings()`.
+        wp_localize_script(
+            $this->App->Config->©brand['©slug'],
+            'mzytpzuu784a54qu8dcwzuhvz623vhdsData',
+            [
+                'brand' => [
+                    'slug' => $this->App->Config->©brand['©slug'],
+                    'var'  => $this->App->Config->©brand['©var'],
+                ],
+                'settings' => $settings, // Via `applicableSettings()`.
 
-            'i18n' => [
-                'tocHeading' => __('Table of Contents', 'wp-tocify'),
-            ],
-        ]);
+                'i18n' => [
+                    'tocHeading' => __('Table of Contents', 'wp-tocify'),
+                ],
+            ]
+        );
     }
 
     /**
@@ -114,7 +118,6 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
             return $settings = [];
         }
         $is_applicable_filter = s::applyFilters('is_applicable', null);
-        // NOTE: This can be used to force a `true` or `false` value.
 
         if ($is_applicable_filter === false) {
             return $settings = []; // Not applicable.
