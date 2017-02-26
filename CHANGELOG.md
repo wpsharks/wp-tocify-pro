@@ -3,6 +3,12 @@
 - Bumping minimum required version of the WP Sharks Core.
 - Updating scripts/styles to bring them inline with core standards.
 - Enhancing security by removing `basename(__FILE__)` from direct access notices.
+- Updating `Restore Default Options`. Now set as a meta link instead of as a tab.
+- Enhancing `via-widget` display option by hiding the widget by default, and only displaying the widget when applicable. As opposed to the old behavior; i.e., showing the widget by default, and then hiding it when not applicable. In short, hiding by default avoids a flash of the TOC when not even applicable on a given page.
+- Removing unnecessary lite build variation from `.build.props`.
+- Enhancing scroll adjustment configuration option. Now _prepending_ anchor to heading instead of _appending_, which does a better job of positioning the user, particularly on multiline headings. The base calculation is also automatically increased when the admin bar is present on any given page. In addition, the TOC scroll adjustments, if enabled, will now adjust `#toc-` hashes only, and nothing else. This avoids a few edge cases where themes include their own hash adjusters. Of course, you can also disable this feature completely if your theme already deals with hash offsets/adjustments.
+- Enhancing the custom inline style system by avoiding inline styles altogether whenever the inline styles wouldn't actually change anything.
+- Bug fix. Properly adding widget class to list of single-instance classes.
 
 ## v160919.17597
 

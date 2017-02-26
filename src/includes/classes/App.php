@@ -5,7 +5,7 @@
  * @author @jaswsinc
  * @copyright WP Sharks™
  */
-declare (strict_types = 1);
+declare(strict_types=1);
 namespace WebSharks\WpSharks\WpTocify\Pro\Classes;
 
 use WebSharks\WpSharks\WpTocify\Pro\Classes;
@@ -40,9 +40,9 @@ class App extends SCoreClasses\App
      *
      * @since 160724.1960
      *
-     * @var string Version.
+     * @type string Version.
      */
-    const VERSION = '170128.699'; //v//
+    const VERSION = '170226.32235'; //v//
 
     /**
      * Constructor.
@@ -57,6 +57,7 @@ class App extends SCoreClasses\App
             '©di' => [
                 '©default_rule' => [
                     'new_instances' => [
+                        Classes\Widgets\Toc::class,
                     ],
                 ],
             ],

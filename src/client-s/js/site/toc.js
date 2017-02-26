@@ -113,7 +113,9 @@
           $a.attr('id', hash).attr('href', '#' + hash)
             .addClass(x.brand.slug + '-anchor');
 
-          $heading.addClass(x.brand.slug + '-heading').append($a);
+          // NOTE: Using `prepend` so anchor is in right location at all times.
+          // e.g., In the case of a multiline heading, the anchor should be at the top.
+          $heading.addClass(x.brand.slug + '-heading').prepend($a);
         });
 
       if (!x.settings.tocEnable || x.settings.tocEnable === '0') {
@@ -178,6 +180,7 @@
         if (!$widgetToc.length) {
           return; // Widget missing.
         }
+        $widget.show(); // Unhide.
         $widgetToc.replaceWith($toc);
         //
       } else if (x.settings.tocEnable === 'via-shortcode') {
@@ -217,9 +220,13 @@
         return; // Not applicable.
       } else if (!location.hash || !location.hash.length) {
         return; // Not applicable.
+      } else if (location.hash.indexOf('#toc-') !== 0) {
+        return; // It's not a TOC location.
       }
       var offset = 28 + ($adminBar.length ? 28 : 0);
-      $htmlBody.scrollTop($window.scrollTop() - offset);
+      var scrollTop = Math.max(0, $window.scrollTop() - offset);
+
+      $htmlBody.scrollTop(scrollTop);
     };
 
     /*

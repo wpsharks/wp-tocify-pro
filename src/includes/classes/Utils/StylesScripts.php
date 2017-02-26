@@ -78,29 +78,50 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
             return; // Not applicable.
         }
         $brand_slug    = $this->App->Config->©brand['©slug'];
-        $inline_styles = '.'.$brand_slug.'-anchor::after { content: '.$this->formatSymbol(s::getOption('anchor_symbol')).' !important; }'."\n".
-            '.'.$brand_slug.'-toc ul > li::before { content: '.$this->formatSymbol(s::getOption('toc_symbol')).' !important; }'."\n".
-            s::getOption('custom_styles'); // Any other custom styles.
 
-        wp_enqueue_style($this->App->Config->©brand['©slug'], c::appUrl('/client-s/css/site/toc.min.css'), [], $this->App::VERSION);
-        wp_add_inline_style($this->App->Config->©brand['©slug'], $inline_styles);
+        $anchor_symbol = $this->formatSymbol(s::getOption('anchor_symbol'));
+        $toc_symbol    = $this->formatSymbol(s::getOption('toc_symbol'));
 
-        wp_enqueue_script($this->App->Config->©brand['©slug'], c::appUrl('/client-s/js/site/toc.min.js'), ['jquery'], $this->App::VERSION, true);
-        wp_localize_script(
-            $this->App->Config->©brand['©slug'],
-            'mzytpzuu784a54qu8dcwzuhvz623vhdsData',
-            [
-                'brand' => [
-                    'slug' => $this->App->Config->©brand['©slug'],
-                    'var'  => $this->App->Config->©brand['©var'],
+        $custom_styles         = s::getOption('custom_styles');
+        $default_custom_styles = s::getDefaultOption('custom_styles');
+        $inline_styles         = ''; // Initialize.
+
+        if ($anchor_symbol !== '#' || $toc_symbol !== '#' || ($custom_styles && $custom_styles !== $default_custom_styles)) {
+            $inline_styles = '.'.$brand_slug.'-anchor::after { content: '.$anchor_symbol.' !important; }'."\n".
+                '.'.$brand_slug.'-toc ul > li::before { content: '.$toc_symbol.' !important; }'."\n".
+                $custom_styles; // Any other custom styles.
+        }
+        s::enqueueLibs(__METHOD__, [
+            'styles' => [
+                $this->App->Config->©brand['©slug'] => [
+                    'ver'    => $this->App::VERSION,
+                    'url'    => c::appUrl('/client-s/css/site/toc.min.css'),
+                    'inline' => $inline_styles,
                 ],
-                'settings' => $settings, // Via `applicableSettings()`.
+            ],
+            'scripts' => [
+                $this->App->Config->©brand['©slug'] => [
+                    'deps'     => ['jquery'],
+                    'ver'      => $this->App::VERSION,
+                    'url'      => c::appUrl('/client-s/js/site/toc.min.js'),
+                    'localize' => [
+                        'key'  => 'mzytpzuu784a54qu8dcwzuhvz623vhdsData',
+                        'data' => [
+                            'brand' => [
+                                'slug' => $this->App->Config->©brand['©slug'],
+                                'var'  => $this->App->Config->©brand['©var'],
+                            ],
+                            'settings' => $settings, // Filterable.
+                            // See filter below in `applicableSettings()`.
 
-                'i18n' => [
-                    'tocHeading' => __('Table of Contents', 'wp-tocify'),
+                            'i18n' => [
+                                'tocHeading' => __('Table of Contents', 'wp-tocify'),
+                            ],
+                        ],
+                    ],
                 ],
-            ]
-        );
+            ],
+        ]);
     }
 
     /**
