@@ -29,8 +29,14 @@ $toc-icon-color: #aaa;
   }
 
   /*
-   * Anchor styles.
+   * Marker/anchor resets.
    */
+  .#{$brand-slug}-marker,
+  .#{$brand-slug}-marker:hover,
+  .#{$brand-slug}-marker:focus,
+  .#{$brand-slug}-marker:active,
+  .#{$brand-slug}-marker:visited,
+  //
   .#{$brand-slug}-anchor,
   .#{$brand-slug}-anchor:hover,
   .#{$brand-slug}-anchor:focus,
@@ -58,9 +64,31 @@ $toc-icon-color: #aaa;
 
     //
     padding:                  0;
-    margin:                   0 0 0 .5em;
-    display:                  inline-block;
+    margin:                   0;
     vertical-align:           middle;
+    display:                  inline-block;
+  }
+
+  /*
+   * Marker styles.
+   */
+  .#{$brand-slug}-marker,
+  .#{$brand-slug}-marker:hover,
+  .#{$brand-slug}-marker:focus,
+  .#{$brand-slug}-marker:active,
+  .#{$brand-slug}-marker:visited {
+    visibility:               hidden;
+  }
+
+  /*
+   * Anchor styles.
+   */
+  .#{$brand-slug}-anchor,
+  .#{$brand-slug}-anchor:hover,
+  .#{$brand-slug}-anchor:focus,
+  .#{$brand-slug}-anchor:active,
+  .#{$brand-slug}-anchor:visited {
+    margin:                   0 0 0 .5em;
   }
 
   /*

@@ -127,6 +127,12 @@
    * Headings.
    */
   /*
+   * Marker/anchor resets.
+   */
+  /*
+   * Marker styles.
+   */
+  /*
    * Anchor styles.
    */
   /*
@@ -147,6 +153,11 @@
   outline: none;
 }
 
+.wp-tocify:not(#x) .wp-tocify-marker,
+.wp-tocify:not(#x) .wp-tocify-marker:hover,
+.wp-tocify:not(#x) .wp-tocify-marker:focus,
+.wp-tocify:not(#x) .wp-tocify-marker:active,
+.wp-tocify:not(#x) .wp-tocify-marker:visited,
 .wp-tocify:not(#x) .wp-tocify-anchor,
 .wp-tocify:not(#x) .wp-tocify-anchor:hover,
 .wp-tocify:not(#x) .wp-tocify-anchor:focus,
@@ -167,9 +178,25 @@
   font-style: normal;
   font-weight: normal;
   padding: 0;
-  margin: 0 0 0 .5em;
-  display: inline-block;
+  margin: 0;
   vertical-align: middle;
+  display: inline-block;
+}
+
+.wp-tocify:not(#x) .wp-tocify-marker,
+.wp-tocify:not(#x) .wp-tocify-marker:hover,
+.wp-tocify:not(#x) .wp-tocify-marker:focus,
+.wp-tocify:not(#x) .wp-tocify-marker:active,
+.wp-tocify:not(#x) .wp-tocify-marker:visited {
+  visibility: hidden;
+}
+
+.wp-tocify:not(#x) .wp-tocify-anchor,
+.wp-tocify:not(#x) .wp-tocify-anchor:hover,
+.wp-tocify:not(#x) .wp-tocify-anchor:focus,
+.wp-tocify:not(#x) .wp-tocify-anchor:active,
+.wp-tocify:not(#x) .wp-tocify-anchor:visited {
+  margin: 0 0 0 .5em;
 }
 
 .wp-tocify:not(#x) .wp-tocify-anchor::after {

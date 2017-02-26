@@ -95,8 +95,6 @@
           var hash = 'toc-' + crc32($.trim(index + title)),
             size = parseInt($heading.prop('tagName').substr(1));
 
-          var $a = $('<a />'); // Initialize `<a />` tag.
-
           headings.push({
             hash: hash,
             size: size,
@@ -110,12 +108,12 @@
               title: title
             });
           }
-          $a.attr('id', hash).attr('href', '#' + hash)
-            .addClass(x.brand.slug + '-anchor');
+          var $aMarker = $('<a />'),
+            $aAnchor = $('<a />');
 
-          // NOTE: Using `prepend` so anchor is in right location at all times.
-          // e.g., In the case of a multiline heading, the anchor should be at the top.
-          $heading.addClass(x.brand.slug + '-heading').prepend($a);
+          $aMarker.attr('id', hash).addClass(x.brand.slug + '-marker');
+          $aAnchor.attr('href', '#' + hash).addClass(x.brand.slug + '-anchor');
+          $heading.addClass(x.brand.slug + '-heading').prepend($aMarker).append($aAnchor);
         });
 
       if (!x.settings.tocEnable || x.settings.tocEnable === '0') {
