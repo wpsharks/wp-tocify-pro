@@ -139,7 +139,8 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
         if (!is_singular()) { // Singulars only.
             return $settings = []; // Not applicable.
         }
-        $is_applicable = null; // Initialize.
+        $is_applicable  = null; // Initialize.
+        $lazy_load_says = null; // Initialize.
 
         $lazy_load        = s::getOption('lazy_load');
         $lazy_load_marker = '<!--'.$this->App->Config->©brand['©slug'].'-->';
@@ -171,20 +172,25 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
         }
         if (!isset($is_applicable) && $lazy_load) {
             if (!($WP_Post = get_post())) {
-                $is_applicable = false;
+                $lazy_load_says = false;
             } elseif (mb_stripos($WP_Post->post_content, $lazy_load_marker) !== false) {
-                $is_applicable = true; // Explicitly enabled by comment marker.
-            } elseif (!preg_match('/\<h[1-6]/ui', $WP_Post->post_content)) {
-                $is_applicable = false; // Nothing to tocify in this case.
+                $lazy_load_says = true; // Explicitly enabled by comment marker.
+            } elseif (!preg_match('/\<h[1-6]/ui', $WP_Post->post_content)
+                && mb_stripos($WP_Post->post_content, '[snippet') === false // `[snippet]` shortcode.
+                && mb_stripos($WP_Post->post_content, '[md') === false // `[md]` shortcode.
+            ) {
+                $lazy_load_says = false; // Nothing to tocify in this case.
             }
         }
         // Give filters a chance to override detections above.
-        $is_applicable = s::applyFilters('is_applicable', $is_applicable);
+        $is_applicable = s::applyFilters('is_applicable', $is_applicable, $lazy_load_says);
 
-        if ($is_applicable === false) {
+        if ($is_applicable === false
+            || (!isset($is_applicable) && $lazy_load_says === false)
+        ) {
             return $settings = []; // Not applicable.
         } else {
-            $anchors_enable = true; // Always true, when applicable.
+            $anchors_enable = true; // Always true if applicable.
         }
         return $settings = s::applyFilters('script_settings', [
             'context' => $context,
