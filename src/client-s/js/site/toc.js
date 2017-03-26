@@ -193,9 +193,10 @@
         return (initialHashChangeHandled = true);
       }
       $htmlBody.scrollTop($aMarker.offset().top),
+        initialHashChangeHandled = true,
         maybeAdjustHashLocation();
 
-      return (initialHashChangeHandled = true);
+      return initialHashChangeHandled;
     };
 
     /*
