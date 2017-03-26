@@ -19,5 +19,5 @@ project_php_required_extensions             =
 project_wp_required_version                 = 4.7
 project_wp_tested_up_to_version             = 4.8
 
-project_wp_sharks_core_required_version     = 170326.19901
-project_wp_sharks_core_tested_up_to_version = 170326.19901
+project_wp_sharks_core_required_version     = 170326.32378
+project_wp_sharks_core_tested_up_to_version = 170326.32378

@@ -66,7 +66,7 @@ $Form = $this->s::postMetaBoxForm('settings');
     ]); ?>
 
     <?= $Form->selectRow([
-        'if' => '_toc_enable!=0|<disabled>',
+        'if' => '_anchors_enable && _toc_enable!=0',
 
         'label' => __('TOC (Max Heading Size)', 'wp-tocify'),
         'tip'   => __('Maximum heading size that will be displayed in the TOC.<hr />For instance, setting this to <code>h3</code> means that <code>h4</code>, <code>h5</code>, <code>h6</code> headings will not be shown in the TOC.', 'wp-tocify'),
