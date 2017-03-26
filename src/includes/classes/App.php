@@ -42,7 +42,7 @@ class App extends SCoreClasses\App
      *
      * @type string Version.
      */
-    const VERSION = '170226.41492'; //v//
+    const VERSION = '170326.22853'; //v//
 
     /**
      * Constructor.
@@ -84,8 +84,10 @@ class App extends SCoreClasses\App
 
             '§pro_option_keys' => [],
             '§default_options' => [
-                'default_anchors_enable'            => 1,
-                'default_anchors_adjust_scroll_pos' => 1,
+                'lazy_load' => true,
+
+                'default_anchors_enable'            => true,
+                'default_anchors_adjust_scroll_pos' => true,
 
                 'default_toc_enable'           => '0',
                 'default_toc_max_heading_size' => 3,

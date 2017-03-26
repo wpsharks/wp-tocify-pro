@@ -21,7 +21,7 @@
     /*
      * HTML/body tags.
      */
-    var $htmlBody = $('html,body');
+    var $htmlBody = $('html, body');
 
     /*
      * Admin bar.
@@ -44,19 +44,23 @@
     var $shortcode = $('.' + x.brand.slug + '-toc-shortcode');
 
     /*
+     * Initial hash change handled?
+     */
+    var initialHashChangeHandled = false;
+
+    /*
      * Context via logic in function.
      */
     var $context = (function () {
-      var $_context, // Initialize only.
-        _contexts = x.settings.context.split(',');
+      var $context, // Initialize only.
+        contexts = x.settings.context.split(',');
 
-      $.each(_contexts, function (_i, _context) {
-        _context = $.trim(_context); // Trim whitespace.
-        if (_context && ($_context = $(_context).first()).length) {
+      $.each(contexts, function (i, context) {
+        context = $.trim(context); // Trim whitespace.
+        if (context && ($context = $(context).first()).length)
           return false; // Found context; break iteration.
-        }
       });
-      return $_context || $();
+      return $context || $();
     })();
 
     /*
@@ -68,10 +72,12 @@
         $widget.remove();
         $shortcode.remove();
         return; // Not enabled here.
+
       } else if (!x.settings.anchorsEnable) {
         $widget.remove();
         $shortcode.remove();
         return; // Not enabled here.
+
       } else if (!$context.length) {
         $widget.remove();
         $shortcode.remove();
@@ -115,6 +121,9 @@
           $aAnchor.attr('href', '#' + hash).addClass(x.brand.slug + '-anchor');
           $heading.addClass(x.brand.slug + '-heading').prepend($aMarker).append($aAnchor);
         });
+
+      maybeHandleInitialHash(); // After the above anchors are in place.
+      $window.on('hashchange', maybeAdjustHashLocation); // Handle hash changes.
 
       if (!x.settings.tocEnable || x.settings.tocEnable === '0') {
         $widget.remove();
@@ -167,6 +176,29 @@
     };
 
     /*
+     * Initial hash location.
+     */
+    var maybeHandleInitialHash = function () {
+      if (initialHashChangeHandled) {
+        return true; // Already done.
+      }
+      if (!location.hash || !location.hash.length) {
+        return (initialHashChangeHandled = true);
+      } else if (location.hash.indexOf('#toc-') !== 0) {
+        return (initialHashChangeHandled = true);
+      }
+      var $aMarker = $('a' + location.hash);
+
+      if ($aMarker.length !== 1) {
+        return (initialHashChangeHandled = true);
+      }
+      $htmlBody.scrollTop($aMarker.offset().top),
+        maybeAdjustHashLocation();
+
+      return (initialHashChangeHandled = true);
+    };
+
+    /*
      * TOC injector.
      */
     var injectToc = function (toc) {
@@ -180,7 +212,7 @@
         }
         $widget.show(); // Unhide.
         $widgetToc.replaceWith($toc);
-        //
+
       } else if (x.settings.tocEnable === 'via-shortcode') {
         $widget.remove(); // Not in use.
 
@@ -197,7 +229,7 @@
           });
         }
         $shortcode.replaceWith($toc);
-        //
+
       } else { // Default behavior.
         $widget.remove(); // Not in use.
         $shortcode.remove(); // Not in use.
@@ -212,7 +244,9 @@
      * Maybe adjust hash location.
      */
     var maybeAdjustHashLocation = function () {
-      if (!x.settings.anchorsEnable) {
+      if (!initialHashChangeHandled) {
+        return; // Not possible.
+      } else if (!x.settings.anchorsEnable) {
         return; // Not applicable.
       } else if (!x.settings.anchorsAdjustScrollPos) {
         return; // Not applicable.
@@ -223,7 +257,6 @@
       }
       var offset = 28 + ($adminBar.length ? 28 : 0);
       var scrollTop = Math.max(0, $window.scrollTop() - offset);
-
       $htmlBody.scrollTop(scrollTop);
     };
 
@@ -244,7 +277,7 @@
     };
 
     /*
-     * Escape HTML special chars.
+     * Escape special chars.
      */
     var escHtml = function (str) {
       str = String(str);
@@ -281,11 +314,5 @@
      * Maybe generate.
      */
     maybeGenerate();
-
-    /*
-     * On hash change.
-     */
-    setTimeout(maybeAdjustHashLocation, 100);
-    $window.on('hashchange', maybeAdjustHashLocation);
   });
 })(jQuery);

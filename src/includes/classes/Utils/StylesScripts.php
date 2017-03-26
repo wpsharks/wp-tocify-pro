@@ -77,7 +77,7 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
         } elseif (!($settings = $this->applicableSettings())) {
             return; // Not applicable.
         }
-        $brand_slug    = $this->App->Config->©brand['©slug'];
+        $brand_slug = $this->App->Config->©brand['©slug'];
 
         $anchor_symbol = $this->formatSymbol(s::getOption('anchor_symbol'));
         $toc_symbol    = $this->formatSymbol(s::getOption('toc_symbol'));
@@ -135,37 +135,57 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
     {
         if (($settings = &$this->cacheKey(__FUNCTION__)) !== null) {
             return $settings; // Cached this already.
-        } elseif (!is_singular()) {
-            return $settings = [];
         }
-        $is_applicable_filter = s::applyFilters('is_applicable', null);
-
-        if ($is_applicable_filter === false) {
+        if (!is_singular()) { // Singulars only.
             return $settings = []; // Not applicable.
         }
-        $context                   = s::getOption('context'); // e.g., `.entry-content`
-        $anchors_enable            = (int) s::getPostMeta(null, '_anchors_enable', s::getOption('default_anchors_enable'));
-        $anchors_enable            = !$anchors_enable && $is_applicable_filter === true ? 1 : $anchors_enable;
-        $anchors_adjust_scroll_pos = s::getOption('default_anchors_adjust_scroll_pos');
+        $is_applicable = null; // Initialize.
 
-        if (!$context || !$anchors_enable) {
-            return $settings = []; // Not applicable.
-        }
-        if ($is_applicable_filter !== true) {
-            $current_post_type  = get_post_type();
-            $include_post_types = s::getOption('include_post_types');
-            $exclude_post_types = s::getOption('exclude_post_types');
+        $lazy_load        = s::getOption('lazy_load');
+        $lazy_load_marker = '<!--'.$this->App->Config->©brand['©slug'].'-->';
 
-            if ($include_post_types && !in_array($current_post_type, $include_post_types, true)) {
-                return $settings = []; // Not applicable.
-            } elseif ($exclude_post_types && in_array($current_post_type, $exclude_post_types, true)) {
-                return $settings = []; // Not applicable.
-            }
-        }
+        $context = s::getOption('context'); // Must have a context (always).
+
+        $anchors_enable            = (bool) s::getPostMeta(null, '_anchors_enable', s::getOption('default_anchors_enable'));
+        $anchors_adjust_scroll_pos = (bool) s::getOption('default_anchors_adjust_scroll_pos');
+
         $toc_enable           = (string) s::getPostMeta(null, '_toc_enable', s::getOption('default_toc_enable'));
         $toc_max_heading_size = (int) s::getPostMeta(null, '_toc_max_heading_size', s::getOption('default_toc_max_heading_size'));
-        $toc_min_headings     = max(1, s::getOption('default_toc_min_headings'));
+        $toc_min_headings     = max(1, (int) s::getOption('default_toc_min_headings'));
 
+        $current_post_type  = get_post_type();
+        $include_post_types = s::getOption('include_post_types');
+        $exclude_post_types = s::getOption('exclude_post_types');
+
+        if (!$context) { // Must have a context.
+            return $settings = []; // Not applicable.
+        }
+        if (!isset($is_applicable)) {
+            if (!$anchors_enable) {
+                $is_applicable = false; // Not applicable.
+            } elseif ($include_post_types && !in_array($current_post_type, $include_post_types, true)) {
+                $is_applicable = false; // Not applicable.
+            } elseif ($exclude_post_types && in_array($current_post_type, $exclude_post_types, true)) {
+                $is_applicable = false; // Not applicable.
+            }
+        }
+        if (!isset($is_applicable) && $lazy_load) {
+            if (!($WP_Post = get_post())) {
+                $is_applicable = false;
+            } elseif (mb_stripos($WP_Post->post_content, $lazy_load_marker) !== false) {
+                $is_applicable = true; // Explicitly enabled by comment marker.
+            } elseif (!preg_match('/\<h[1-6]/ui', $WP_Post->post_content)) {
+                $is_applicable = false; // Nothing to tocify in this case.
+            }
+        }
+        // Give filters a chance to override detections above.
+        $is_applicable = s::applyFilters('is_applicable', $is_applicable);
+
+        if ($is_applicable === false) {
+            return $settings = []; // Not applicable.
+        } else {
+            $anchors_enable = true; // Always true, when applicable.
+        }
         return $settings = s::applyFilters('script_settings', [
             'context' => $context,
 

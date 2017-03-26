@@ -9,6 +9,7 @@
 - Enhancing scroll adjustment configuration option. Now _prepending_ anchor to heading instead of _appending_, which does a better job of positioning the user, particularly on multiline headings. The base calculation is also automatically increased when the admin bar is present on any given page. In addition, the TOC scroll adjustments, if enabled, will now adjust `#toc-` hashes only, and nothing else. This avoids a few edge cases where themes include their own hash adjusters. Of course, you can also disable this feature completely if your theme already deals with hash offsets/adjustments.
 - Enhancing the custom inline style system by avoiding inline styles altogether whenever the inline styles wouldn't actually change anything.
 - Bug fix. Properly adding widget class to list of single-instance classes.
+- Bug fix. Improved handling of the initial hash location jump in some browsers.
 
 ## v160919.17597
 

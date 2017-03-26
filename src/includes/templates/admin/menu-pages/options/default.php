@@ -5,7 +5,7 @@
  * @author @jaswsinc
  * @copyright WP Sharks™
  */
-declare (strict_types = 1);
+declare(strict_types=1);
 namespace WebSharks\WpSharks\WpTocify\Pro;
 
 use WebSharks\WpSharks\WpTocify\Pro\Classes;
@@ -49,7 +49,7 @@ $Form = $this->s::MenuPageForm('§save-options');
             'value' => s::getOption('context'),
         ]); ?>
 
-        <tr><td colspan="2" style="padding:0;"><hr /></td></tr>
+        <?= $Form->hrRow(); ?>
 
         <?= $Form->selectRow([
             'label' => __('Enable Anchors by Default?', 'wp-tocify'),
@@ -59,8 +59,8 @@ $Form = $this->s::MenuPageForm('§save-options');
             'name'    => 'default_anchors_enable',
             'value'   => s::getOption('default_anchors_enable'),
             'options' => [
-                0 => __('No', 'wp-tocify'),
-                1 => __('Yes', 'wp-tocify'),
+                '0' => __('No', 'wp-tocify'),
+                '1' => __('Yes', 'wp-tocify'),
             ],
         ]); ?>
 
@@ -72,12 +72,24 @@ $Form = $this->s::MenuPageForm('§save-options');
             'name'    => 'default_anchors_adjust_scroll_pos',
             'value'   => s::getOption('default_anchors_adjust_scroll_pos'),
             'options' => [
-                0 => __('No', 'wp-tocify'),
-                1 => __('Yes', 'wp-tocify'),
+                '0' => __('No', 'wp-tocify'),
+                '1' => __('Yes', 'wp-tocify'),
             ],
         ]); ?>
 
-        <tr><td colspan="2" style="padding:0;"><hr /></td></tr>
+        <?= $Form->selectRow([
+            'label' => __('Lazy Load?', 'wp-tocify'),
+            'tip'   => __('Enable this to avoid loading JS/CSS on pages that do not contain headings.', 'wp-tocify'),
+
+            'name'    => 'lazy_load',
+            'value'   => s::getOption('lazy_load'),
+            'options' => [
+                '1' => __('Yes', 'wp-tocify'),
+                '0' => __('No', 'wp-tocify'),
+            ],
+        ]); ?>
+
+        <?= $Form->hrRow(); ?>
 
         <?= $Form->selectRow([
             'label' => __('Enable TOC by Default?', 'wp-tocify'),
@@ -103,13 +115,13 @@ $Form = $this->s::MenuPageForm('§save-options');
             'name'    => 'default_toc_max_heading_size',
             'value'   => s::getOption('default_toc_max_heading_size'),
             'options' => [
-                0 => __('Show All Headings', 'wp-tocify'),
-                1 => __('<h1>', 'wp-tocify'),
-                2 => __('<h2>', 'wp-tocify'),
-                3 => __('<h3>', 'wp-tocify'),
-                4 => __('<h4>', 'wp-tocify'),
-                5 => __('<h5>', 'wp-tocify'),
-                6 => __('<h6>', 'wp-tocify'),
+                '0' => __('Show All Headings', 'wp-tocify'),
+                '1' => __('<h1>', 'wp-tocify'),
+                '2' => __('<h2>', 'wp-tocify'),
+                '3' => __('<h3>', 'wp-tocify'),
+                '4' => __('<h4>', 'wp-tocify'),
+                '5' => __('<h5>', 'wp-tocify'),
+                '6' => __('<h6>', 'wp-tocify'),
             ],
         ]); ?>
 
