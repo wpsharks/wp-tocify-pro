@@ -4,7 +4,7 @@
  *
  * @wp-plugin
  *
- * Version: 170326.47078
+ * Version: 170328.37548
  * Text Domain: wp-tocify
  * Plugin Name: WP Tocify Pro
  *

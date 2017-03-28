@@ -27,13 +27,28 @@
  * <http://chir.ag/projects/name-that-color>
  */
 /*
- * `._content` variables.
+ * Font variables.
+ */
+/*
+ * Content font variables.
  */
 /*
  * Pixels to rem.
  */
 /*
  * Fancy blockquotes.
+ */
+/*
+ * Fancy checkboxes.
+ */
+/*
+ * Fancy definitions.
+ */
+/*
+ * Fancy HR tags.
+ */
+/*
+ * Fancy link targets.
  */
 /*
  * Fancy monospace tags.
@@ -48,19 +63,25 @@
  * Fancy placeholders.
  */
 /*
+ * Font events.
+ */
+/*
  * Font features.
  */
 /*
  * Pixels to rem.
  */
 /*
- * Mixins for responsive tweaks.
- * See: <http://semantic-ui.com/elements/container.html>
- * See: <http://semantic-ui.com/collections/grid.html#device-visibility>
- * See: <http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.css>
+ * Device breakpoints.
+ * Following Semantic UI breakpoints.
  */
 /*
- * Larger fonts.
+ * Responsive utils.
+ * Following Semantic UI breakpoints.
+ * + custom `handheld` & `small screen` breakpoints.
+ */
+/*
+ * Responsive fonts.
  */
 /*
  * Responsive images.
@@ -69,13 +90,34 @@
  * Highlight.js <pre><code>.
  */
 /*
- * Position utils.
+ * Box shadow tools.
  */
 /*
- * Mixins for responsive tweaks.
- * See: <http://semantic-ui.com/elements/container.html>
- * See: <http://semantic-ui.com/collections/grid.html#device-visibility>
- * See: <http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.css>
+ * Centered tools.
+ */
+/*
+ * Position tools.
+ */
+/*
+ * Device breakpoints.
+ * Following Semantic UI breakpoints.
+ */
+/*
+ * Responsive utils.
+ * Following Semantic UI breakpoints.
+ * + custom `handheld` & `small screen` breakpoints.
+ */
+/*
+ * Text shadow tools.
+ */
+/*
+ * Device breakpoints.
+ * Following Semantic UI breakpoints.
+ */
+/*
+ * Responsive utils.
+ * Following Semantic UI breakpoints.
+ * + custom `handheld` & `small screen` breakpoints.
  */
 /*
  * Align utils.
@@ -84,22 +126,46 @@
  * Blurred utils.
  */
 /*
- * Box shadow utilities.
+ * Border utils.
+ */
+/*
+ * Box shadow utils.
+ */
+/*
+ * Color utils.
  */
 /*
  * Content utils.
  */
 /*
+ * Disabled utils.
+ */
+/*
  * Display utils.
+ */
+/*
+ * Font utils.
+ */
+/*
+ * Height utils.
  */
 /*
  * Inset utils.
  */
 /*
- * Line clamp utils.
+ * Line utils.
  */
 /*
- * Muted utils.
+ * List utils.
+ */
+/*
+ * Margin utils.
+ */
+/*
+ * Opacity utils.
+ */
+/*
+ * Padding utils.
  */
 /*
  * Position utils.
@@ -111,7 +177,10 @@
  * Text shadow utilities.
  */
 /*
- * WP align utils.
+ * Visibility utils.
+ */
+/*
+ * Width utils.
  */
 /*
  * Brand configuration.
@@ -205,15 +274,21 @@
   transition: opacity 0.25s;
   content: '#';
   opacity: 0;
+  color: inherit;
   display: inline-block;
   width: 1em;
   height: 1em;
   box-sizing: inherit;
 }
 
+@media (max-width: 767px) {
+  .wp-tocify:not(#x) .wp-tocify-anchor::after {
+    opacity: 1;
+  }
+}
+
 .wp-tocify:not(#x) .wp-tocify-heading:hover .wp-tocify-anchor::after {
   opacity: 1;
-  color: inherit;
 }
 
 .wp-tocify:not(#x) .wp-tocify-heading:hover .wp-tocify-anchor:hover::after {
@@ -321,6 +396,7 @@
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-left ~ h6,
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-left ~ div,
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-left ~ form,
+  .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-left ~ section,
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-left ~ hr, .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-right ~ p,
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-right ~ ol,
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-right ~ ul,
@@ -332,6 +408,7 @@
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-right ~ h6,
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-right ~ div,
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-right ~ form,
+  .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-right ~ section,
   .wp-tocify:not(#x) .wp-tocify-toc:not(.-style-none).-float-right ~ hr {
     clear: none;
   }

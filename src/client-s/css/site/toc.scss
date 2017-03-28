@@ -103,12 +103,17 @@ $toc-icon-color: #aaa;
 
       //
       opacity:                0;
+      color:                  inherit;
       display:                inline-block;
 
       //
       width:                  1em;
       height:                 1em;
       box-sizing:             inherit;
+
+      @media (max-width: 767px) {
+        opacity:              1;
+      }
     }
   }
 
@@ -119,7 +124,6 @@ $toc-icon-color: #aaa;
     .#{$brand-slug}-anchor {
       &::after {
         opacity:              1;
-        color:                inherit;
       }
 
       &:hover {
@@ -241,6 +245,7 @@ $toc-icon-color: #aaa;
         ~ h6,
         ~ div,
         ~ form,
+        ~ section,
         ~ hr {
           clear:              none;
         }
