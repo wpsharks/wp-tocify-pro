@@ -51,6 +51,9 @@
  * Fancy link targets.
  */
 /*
+ * Fancy messages.
+ */
+/*
  * Fancy monospace tags.
  */
 /*
@@ -257,6 +260,9 @@
 .wp-tocify:not(#x) .wp-tocify-marker:focus,
 .wp-tocify:not(#x) .wp-tocify-marker:active,
 .wp-tocify:not(#x) .wp-tocify-marker:visited {
+  width: 0;
+  height: 1px;
+  line-height: 1px;
   visibility: hidden;
 }
 

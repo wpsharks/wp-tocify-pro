@@ -77,6 +77,10 @@ $toc-icon-color: #aaa;
   .#{$brand-slug}-marker:focus,
   .#{$brand-slug}-marker:active,
   .#{$brand-slug}-marker:visited {
+    // So JS offset() works.
+    width:                    0;
+    height:                   1px;
+    line-height:              1px;
     visibility:               hidden;
   }
 
