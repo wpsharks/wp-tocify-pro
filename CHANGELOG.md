@@ -1,6 +1,7 @@
 ## $v
 
-- Enhancing the custom inline style system by avoiding inline styles altogether whenever the inline styles wouldn't actually change anything.
+- **Bug Fix:** Admin bar offset detection being attempted when the admin bar was not present.
+- **Bug Fix:** Regression. Enhancing the custom inline style system by avoiding inline styles altogether whenever the inline styles wouldn't actually change anything.
 
 ## v170329.47339
 

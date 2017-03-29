@@ -201,7 +201,7 @@
      * Offset hash location.
      */
     var adjustHashLocation = function () {
-      var offset = 28 + $adminBar.outerHeight(),
+      var offset = 28 + ($adminBar.outerHeight() || 0),
         scrollTop = Math.max(0, $window.scrollTop() - offset);
       $htmlBody.scrollTop(scrollTop);
     };
