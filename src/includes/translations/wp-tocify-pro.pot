@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WP Tocify Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Tocify Pro 170328.37548\n"
+"Project-Id-Version: WP Tocify Pro 170329.23106\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-tocify-pro\n"
-"POT-Creation-Date: 2017-03-28 10:26:25+00:00\n"
+"POT-Creation-Date: 2017-03-29 06:25:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,7 +16,7 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-#: src/includes/classes/Utils/StylesScripts.php:118
+#: src/includes/classes/Utils/StylesScripts.php:119
 msgid "Table of Contents"
 msgstr ""
 

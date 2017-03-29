@@ -1,88 +1,81 @@
 (function ($) {
-  /*
-   * Window.
-   */
-  var $window = $(window);
-
-  /*
-   * Document.
-   */
-  var $document = $(document);
-
-  /*
-   * On DOM ready.
-   */
-  $document.ready(function () {
+  $(document).ready(function () {
     /*
-     * Plugin-specific data.
+     * Properties.
      */
-    var x = mzytpzuu784a54qu8dcwzuhvz623vhdsData;
+    var $window;
+    var $htmlBody;
+    var $adminBar;
+    var $widget;
+    var $widgetToc;
+    var $shortcode;
+    var $shortcodeToc;
+    var $context;
+
+    var x = wpTocifyData;
 
     /*
-     * HTML/body tags.
+     * Maybe run setup.
      */
-    var $htmlBody = $('html, body');
+    var maybeSetup = function () {
 
-    /*
-     * Admin bar.
-     */
-    var $adminBar = $('#wpadminbar');
+      /*
+       * Variables.
+       */
+      $window = $(window);
 
-    /*
-     * Widget container.
-     */
-    var $widget = $('.' + x.brand.slug + '-toc-widget');
+      $htmlBody = $('html, body');
+      $adminBar = $('#wpadminbar');
 
-    /*
-     * Widget TOC content div.
-     */
-    var $widgetToc = $widget.find('.-toc');
+      $widget = $('.' + x.brand.slug + '-toc-widget');
+      $widgetToc = $widget.find('.-toc');
 
-    /*
-     * Shortcode container.
-     */
-    var $shortcode = $('.' + x.brand.slug + '-toc-shortcode');
+      $shortcode = $('.' + x.brand.slug + '-toc-shortcode');
+      $shortcodeToc = $shortcode.find('.' + x.brand.slug + '-toc');
 
-    /*
-     * Initial hash change handled?
-     */
-    var initialHashChangeHandled = false;
+      $context = (function () {
+        var $context, // Initialize only.
+          contexts = x.settings.context.split(',');
 
-    /*
-     * Context via logic in function.
-     */
-    var $context = (function () {
-      var $context, // Initialize only.
-        contexts = x.settings.context.split(',');
+        $.each(contexts, function (i, context) {
+          context = $.trim(context); // Trim whitespace.
+          if (context && ($context = $(context).first()).length)
+            return false; // Found context; break iteration.
+        });
+        return $context || $();
+      })();
 
-      $.each(contexts, function (i, context) {
-        context = $.trim(context); // Trim whitespace.
-        if (context && ($context = $(context).first()).length)
-          return false; // Found context; break iteration.
-      });
-      return $context || $();
-    })();
-
-    /*
-     * Generator.
-     */
-    var maybeGenerate = function () {
-
+      /*
+       * Conditionals.
+       */
       if (!$('.' + x.brand.slug).length) {
+        // Check for body class.
         $widget.remove();
         $shortcode.remove();
-        return; // Not enabled here.
+        return; // Not applicable.
 
       } else if (!x.settings.anchorsEnable) {
         $widget.remove();
         $shortcode.remove();
-        return; // Not enabled here.
+        return; // Not applicable.
 
       } else if (!$context.length) {
         $widget.remove();
         $shortcode.remove();
-        return; // Not possible.
+        return; // Not applicable.
       }
+
+      /*
+       * Complete setup.
+       */
+      $window.on('hashchange', maybeAdjustHashLocation),
+        generate(); // Anchors and table of contents.
+    };
+
+    /*
+     * Generator.
+     */
+    var generate = function () {
 
       var headings = [],
         tocHeadings = [],
@@ -122,16 +115,15 @@
           $heading.addClass(x.brand.slug + '-heading').prepend($aMarker).append($aAnchor);
         });
 
-      maybeHandleInitialHash(); // After the above anchors are in place.
-      $window.on('hashchange', maybeAdjustHashLocation); // Handle hash changes.
-
       if (!x.settings.tocEnable || x.settings.tocEnable === '0') {
         $widget.remove();
         $shortcode.remove();
+        maybeHandleInitialHash();
         return;
       } else if (!tocHeadings.length || tocHeadings.length < x.settings.tocMinHeadings) {
         $widget.remove();
         $shortcode.remove();
+        maybeHandleInitialHash();
         return;
       }
 
@@ -173,30 +165,45 @@
       toc += '</div>';
 
       injectToc(toc);
+      maybeHandleInitialHash();
     };
 
     /*
      * Initial hash location.
      */
     var maybeHandleInitialHash = function () {
-      if (initialHashChangeHandled) {
-        return true; // Already done.
-      }
       if (!location.hash || !location.hash.length) {
-        return (initialHashChangeHandled = true);
+        return; // Not applicable.
       } else if (location.hash.indexOf('#toc-') !== 0) {
-        return (initialHashChangeHandled = true);
+        return; // Not applicable.
+      } else if ($window.scrollTop() > 0) {
+        return; // Scrolled already.
       }
-      var $aMarker = $('a' + location.hash);
+      var hash = location.hash;
+      location.hash = '', location.hash = hash;
+    };
 
-      if ($aMarker.length !== 1) {
-        return (initialHashChangeHandled = true);
+    /*
+     * Maybe adjust hash location.
+     */
+    var maybeAdjustHashLocation = function () {
+      if (!x.settings.anchorsAdjustScrollPos) {
+        return; // Not applicable.
+      } else if (!location.hash || !location.hash.length) {
+        return; // Not applicable.
+      } else if (location.hash.indexOf('#toc-') !== 0) {
+        return; // Not a TOC location.
       }
-      $htmlBody.scrollTop($aMarker.offset().top),
-        initialHashChangeHandled = true,
-        maybeAdjustHashLocation();
+      setTimeout(adjustHashLocation, 50);
+    };
 
-      return initialHashChangeHandled;
+    /*
+     * Offset hash location.
+     */
+    var adjustHashLocation = function () {
+      var offset = 28 + $adminBar.outerHeight(),
+        scrollTop = Math.max(0, $window.scrollTop() - offset);
+      $htmlBody.scrollTop(scrollTop);
     };
 
     /*
@@ -239,26 +246,6 @@
         $toc.addClass('-' + x.settings.tocEnable.replace(/\s+/g, ' -'));
         $context.prepend($toc); // Prepend to `$context`.
       }
-    };
-
-    /*
-     * Maybe adjust hash location.
-     */
-    var maybeAdjustHashLocation = function () {
-      if (!initialHashChangeHandled) {
-        return; // Not possible.
-      } else if (!x.settings.anchorsEnable) {
-        return; // Not applicable.
-      } else if (!x.settings.anchorsAdjustScrollPos) {
-        return; // Not applicable.
-      } else if (!location.hash || !location.hash.length) {
-        return; // Not applicable.
-      } else if (location.hash.indexOf('#toc-') !== 0) {
-        return; // It's not a TOC location.
-      }
-      var offset = 28 + ($adminBar.length ? 28 : 0);
-      var scrollTop = Math.max(0, $window.scrollTop() - offset);
-      $htmlBody.scrollTop(scrollTop);
     };
 
     /*
@@ -312,8 +299,8 @@
     };
 
     /*
-     * Maybe generate.
+     * Maybe run setup.
      */
-    maybeGenerate();
+    maybeSetup(); // Anchors/TOC.
   });
 })(jQuery);

@@ -78,6 +78,7 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
             return; // Not applicable.
         }
         $brand_slug = $this->App->Config->©brand['©slug'];
+        $brand_var  = $this->App->Config->©brand['©var'];
 
         $anchor_symbol = $this->formatSymbol(s::getOption('anchor_symbol'));
         $toc_symbol    = $this->formatSymbol(s::getOption('toc_symbol'));
@@ -93,23 +94,23 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
         }
         s::enqueueLibs(__METHOD__, [
             'styles' => [
-                $this->App->Config->©brand['©slug'] => [
+                $brand_slug => [
                     'ver'    => $this->App::VERSION,
                     'url'    => c::appUrl('/client-s/css/site/toc.min.css'),
                     'inline' => $inline_styles,
                 ],
             ],
             'scripts' => [
-                $this->App->Config->©brand['©slug'] => [
+                $brand_slug => [
                     'deps'     => ['jquery'],
                     'ver'      => $this->App::VERSION,
                     'url'      => c::appUrl('/client-s/js/site/toc.min.js'),
                     'localize' => [
-                        'key'  => 'mzytpzuu784a54qu8dcwzuhvz623vhdsData',
+                        'key'  => c::varToCamelCase($brand_var).'Data',
                         'data' => [
                             'brand' => [
-                                'slug' => $this->App->Config->©brand['©slug'],
-                                'var'  => $this->App->Config->©brand['©var'],
+                                'slug' => $brand_slug,
+                                'var'  => $brand_var,
                             ],
                             'settings' => $settings, // Filterable.
                             // See filter below in `applicableSettings()`.
