@@ -1,4 +1,4 @@
-## $v
+## v170329.47339
 
 - Bumping minimum required version of the WP Sharks Core.
 - Updating scripts/styles to bring them inline with core standards.
