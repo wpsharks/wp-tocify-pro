@@ -80,16 +80,16 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
         $brand_slug = $this->App->Config->©brand['©slug'];
         $brand_var  = $this->App->Config->©brand['©var'];
 
-        $anchor_symbol = $this->formatSymbol(s::getOption('anchor_symbol'));
-        $toc_symbol    = $this->formatSymbol(s::getOption('toc_symbol'));
+        $anchor_symbol = s::getOption('anchor_symbol');
+        $toc_symbol    = s::getOption('toc_symbol');
 
         $custom_styles         = s::getOption('custom_styles');
         $default_custom_styles = s::getDefaultOption('custom_styles');
         $inline_styles         = ''; // Initialize.
 
         if ($anchor_symbol !== '#' || $toc_symbol !== '#' || ($custom_styles && $custom_styles !== $default_custom_styles)) {
-            $inline_styles = '.'.$brand_slug.'-anchor::after { content: '.$anchor_symbol.' !important; }'."\n".
-                '.'.$brand_slug.'-toc ul > li::before { content: '.$toc_symbol.' !important; }'."\n".
+            $inline_styles = '.'.$brand_slug.'-anchor::after { content: '.$this->formatSymbol($anchor_symbol).' !important; }'."\n".
+                '.'.$brand_slug.'-toc ul > li::before { content: '.$this->formatSymbol($toc_symbol).' !important; }'."\n".
                 $custom_styles; // Any other custom styles.
         }
         s::enqueueLibs(__METHOD__, [

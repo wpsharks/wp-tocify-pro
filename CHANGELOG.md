@@ -1,3 +1,7 @@
+## $v
+
+- Enhancing the custom inline style system by avoiding inline styles altogether whenever the inline styles wouldn't actually change anything.
+
 ## v170329.47339
 
 - Bumping minimum required version of the WP Sharks Core.
