@@ -81,10 +81,11 @@
         tocHeadings = [],
         toc = '';
 
-      var _tocChildUlTagsOpen = 0,
+      var _tocChildUlTagsOpen = [],
         _prevTocHeading = null,
         _tocHeading = null,
-        _i = 0;
+        _i = 0,
+        _j = 0;
 
       $context.find('h1, h2, h3, h4, h5, h6')
         .each(function (index) {
@@ -138,17 +139,19 @@
         if ((_prevTocHeading = _i > 0 ? tocHeadings[_i - 1] : null)) {
           if (_tocHeading.size > _prevTocHeading.size) {
 
-            toc += '<ul>';
-            _tocChildUlTagsOpen++;
+            toc += '<ul>'; // Increase depth.
+            _tocChildUlTagsOpen.push([_prevTocHeading.size, _tocHeading.size]);
 
           } else if (_tocHeading.size < _prevTocHeading.size) {
 
             toc += '</li>'; // Close.
 
-            if (_tocChildUlTagsOpen > 0) {
-              toc += repeat('</ul></li>', _tocChildUlTagsOpen);
-            }
-            _tocChildUlTagsOpen = 0; // Reset depth now.
+            for (_j = _tocChildUlTagsOpen.length - 1; _j >= 0; _j--) {
+              if (_tocChildUlTagsOpen[_j][0] >= _tocHeading.size && _tocChildUlTagsOpen[_j][1] > _tocHeading.size) {
+                toc += '</ul></li>'; // Decrease depth.
+                _tocChildUlTagsOpen.pop();
+              } // See: <https://jsfiddle.net/pbo1005b/>
+            } // This back out the proper number of levels.
 
           } else {
             toc += '</li>'; // Close.
@@ -160,6 +163,9 @@
           '</a>';
       }
       toc += '</li>';
+      if (_tocChildUlTagsOpen.length > 0) {
+        toc += repeat('</ul></li>', _tocChildUlTagsOpen.length);
+      }
       toc += '</ul>';
       toc += '</div>';
       toc += '</div>';
