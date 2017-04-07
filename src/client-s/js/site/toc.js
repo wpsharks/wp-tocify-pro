@@ -89,8 +89,12 @@
 
       $context.find('h1, h2, h3, h4, h5, h6')
         .each(function (index) {
-          var $heading = $(this), // This heading.
-            title = $.trim($heading.text().replace(/\s+/g, ' '));
+          var $heading = $(this),
+            $clone = $heading.clone();
+
+          $clone.find('table, input, button, label, details').remove();
+          var title = $.trim($clone.text().replace(/\s+/g, ' '));
+          if (!title.length) return; // Title is empty.
 
           var hash = 'toc-' + crc32($.trim(index + title)),
             size = parseInt($heading.prop('tagName').substr(1));
