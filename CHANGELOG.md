@@ -1,5 +1,6 @@
 ## $v
 
+- **Bug Fix:** Exclude headings found in nested `<article>` tags.
 - **Bug Fix:** Invalid TOC heading levels under some scenarios. Fixed in this release.
 - **Bug Fix:** Admin bar offset detection being attempted when the admin bar was not present.
 - **Bug Fix:** Regression. Enhancing the custom inline style system by avoiding inline styles altogether whenever the inline styles wouldn't actually change anything.

@@ -87,7 +87,9 @@
         _i = 0,
         _j = 0;
 
-      $context.find('h1, h2, h3, h4, h5, h6')
+      $context.find('h1, h2, h3, h4, h5, h6').not($context.find('article *'))
+        // Exclude headings found in nested `<article>` tags.
+
         .each(function (index) {
           var $heading = $(this),
             $clone = $heading.clone();
