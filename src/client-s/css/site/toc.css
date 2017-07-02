@@ -2,190 +2,6 @@
  * Requires a local copy of the WP Sharks Core.
  */
 /*
- * Requires a local copy of the WebSharks Core.
- */
-/*
- * Semantic colors.
- */
-/*
- * Fancy blockquotes.
- */
-/*
- * Fancy monospace tags.
- */
-/*
- * Named colors.
- */
-/*
- * Social networks.
- */
-/*
- * Our own names.
- */
-/*
- * Name that color!
- * <http://chir.ag/projects/name-that-color>
- */
-/*
- * Font variables.
- */
-/*
- * Content font variables.
- */
-/*
- * Pixels to rem.
- */
-/*
- * Fancy blockquotes.
- */
-/*
- * Fancy checkboxes.
- */
-/*
- * Fancy definitions.
- */
-/*
- * Fancy HR tags.
- */
-/*
- * Fancy link targets.
- */
-/*
- * Fancy messages.
- */
-/*
- * Fancy monospace tags.
- */
-/*
- * Fancy navigation menus.
- */
-/*
- * Fancy pagination menus.
- */
-/*
- * Fancy placeholders.
- */
-/*
- * Font events.
- */
-/*
- * Font features.
- */
-/*
- * Pixels to rem.
- */
-/*
- * Device breakpoints.
- * Following Semantic UI breakpoints.
- */
-/*
- * Responsive utils.
- * Following Semantic UI breakpoints.
- * + custom `handheld` & `small screen` breakpoints.
- */
-/*
- * Responsive fonts.
- */
-/*
- * Responsive images.
- */
-/*
- * Highlight.js <pre><code>.
- */
-/*
- * Box shadow tools.
- */
-/*
- * Centered tools.
- */
-/*
- * Position tools.
- */
-/*
- * Device breakpoints.
- * Following Semantic UI breakpoints.
- */
-/*
- * Responsive utils.
- * Following Semantic UI breakpoints.
- * + custom `handheld` & `small screen` breakpoints.
- */
-/*
- * Text shadow tools.
- */
-/*
- * Device breakpoints.
- * Following Semantic UI breakpoints.
- */
-/*
- * Responsive utils.
- * Following Semantic UI breakpoints.
- * + custom `handheld` & `small screen` breakpoints.
- */
-/*
- * Align utils.
- */
-/*
- * Blurred utils.
- */
-/*
- * Border utils.
- */
-/*
- * Box shadow utils.
- */
-/*
- * Color utils.
- */
-/*
- * Content utils.
- */
-/*
- * Disabled utils.
- */
-/*
- * Display utils.
- */
-/*
- * Font utils.
- */
-/*
- * Height utils.
- */
-/*
- * Inset utils.
- */
-/*
- * Line utils.
- */
-/*
- * List utils.
- */
-/*
- * Margin utils.
- */
-/*
- * Opacity utils.
- */
-/*
- * Padding utils.
- */
-/*
- * Position utils.
- */
-/*
- * Responsive utils.
- */
-/*
- * Text shadow utilities.
- */
-/*
- * Visibility utils.
- */
-/*
- * Width utils.
- */
-/*
  * Brand configuration.
  */
 /*
@@ -271,13 +87,11 @@
 .wp-tocify:not(#x) .wp-tocify-anchor:focus,
 .wp-tocify:not(#x) .wp-tocify-anchor:active,
 .wp-tocify:not(#x) .wp-tocify-anchor:visited {
-  margin: 0 0 0 .5em;
+  position: relative;
+  left: .5em;
 }
 
 .wp-tocify:not(#x) .wp-tocify-anchor::after {
-  -webkit-transition: opacity 0.25s;
-  -moz-transition: opacity 0.25s;
-  transition: opacity 0.25s;
   content: '#';
   opacity: 0;
   color: inherit;
@@ -285,6 +99,7 @@
   width: 1em;
   height: 1em;
   box-sizing: inherit;
+  transition: opacity 0.25s;
 }
 
 @media (max-width: 767px) {

@@ -92,7 +92,8 @@ $toc-icon-color: #aaa;
   .#{$brand-slug}-anchor:focus,
   .#{$brand-slug}-anchor:active,
   .#{$brand-slug}-anchor:visited {
-    margin:                   0 0 0 .5em;
+    position:                 relative;
+    left:                    .5em;
   }
 
   /*
@@ -100,9 +101,6 @@ $toc-icon-color: #aaa;
    */
   .#{$brand-slug}-anchor {
     &::after {
-      @include transition(opacity 0.25s);
-
-      //
       content:                '#';
 
       //
@@ -114,6 +112,9 @@ $toc-icon-color: #aaa;
       width:                  1em;
       height:                 1em;
       box-sizing:             inherit;
+
+      //
+      transition:             opacity 0.25s;
 
       @media (max-width: 767px) {
         opacity:              1;

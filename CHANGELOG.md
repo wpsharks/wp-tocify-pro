@@ -5,6 +5,7 @@
 - **Bug Fix:** Admin bar offset detection being attempted when the admin bar was not present.
 - **Bug Fix:** Regression. Enhancing the custom inline style system by avoiding inline styles altogether whenever the inline styles wouldn't actually change anything.
 - **Enhancement:** Automatically strip `table, input, button, label, details` from heading before adding the heading text to the TOC. This avoids extraneous text in the TOC next to each heading.
+- Improving marker positioning to avoid jumpiness when applied to centered headings.
 
 ## v170329.47339
 
