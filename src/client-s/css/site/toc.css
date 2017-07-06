@@ -82,15 +82,6 @@
   visibility: hidden;
 }
 
-.wp-tocify:not(#x) .wp-tocify-anchor,
-.wp-tocify:not(#x) .wp-tocify-anchor:hover,
-.wp-tocify:not(#x) .wp-tocify-anchor:focus,
-.wp-tocify:not(#x) .wp-tocify-anchor:active,
-.wp-tocify:not(#x) .wp-tocify-anchor:visited {
-  position: relative;
-  left: .5em;
-}
-
 .wp-tocify:not(#x) .wp-tocify-anchor::after {
   content: '#';
   opacity: 0;
