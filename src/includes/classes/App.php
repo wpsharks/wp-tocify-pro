@@ -42,7 +42,7 @@ class App extends SCoreClasses\App
      *
      * @type string Version.
      */
-    const VERSION = '170702.81228'; //v//
+    const VERSION = '170706.14761'; //v//
 
     /**
      * Constructor.
@@ -84,16 +84,17 @@ class App extends SCoreClasses\App
 
             '§pro_option_keys' => [],
             '§default_options' => [
-                'lazy_load' => true,
+                'lazy_load'           => true,
+                'handle_initial_hash' => true,
+                'adjust_scroll_pos'   => true,
 
-                'default_anchors_enable'            => true,
-                'default_anchors_adjust_scroll_pos' => true,
+                'context' => '.entry-content, .hentry, #content',
+
+                'default_anchors_enable' => true,
 
                 'default_toc_enable'           => '0',
                 'default_toc_max_heading_size' => 3,
                 'default_toc_min_headings'     => 3,
-
-                'context' => '.entry-content, .hentry, #content',
 
                 'anchor_symbol' => '#',
                 'toc_symbol'    => '#',

@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WP Tocify Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Tocify Pro 170702.81228\n"
+"Project-Id-Version: WP Tocify Pro 170706.14761\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-tocify-pro\n"
-"POT-Creation-Date: 2017-07-02 22:33:51+00:00\n"
+"POT-Creation-Date: 2017-07-06 04:06:04+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,223 +37,237 @@ msgid "Browse the <a href=\"%1$s\" target=\"_blank\">knowledge base</a> to learn
 msgstr ""
 
 #: src/includes/templates/admin/menu-pages/options/default.php:44
-msgid "JS/CSS Content Selector"
+msgid "Lazy Load?"
 msgstr ""
 
 #: src/includes/templates/admin/menu-pages/options/default.php:45
-msgid "This must be a valid CSS selector. It's used by jQuery to find the DOM 'content'.<hr />Many WordPress themes use <code>.entry-content</code>, but you may need to change this so it works with your theme.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority."
+msgid "Enable this to avoid loading JS/CSS on pages that do not contain headings."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:46
-msgid "Widening the scope of this selector may pick up additional headings like an &lt;h1&gt; tag."
+#: src/includes/templates/admin/menu-pages/options/default.php:50
+#: src/includes/templates/admin/menu-pages/options/default.php:63
+#: src/includes/templates/admin/menu-pages/options/default.php:76
+#: src/includes/templates/admin/menu-pages/options/default.php:103
+#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:47
+msgid "Yes"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:55
-msgid "Enable Anchors by Default?"
-msgstr ""
-
-#: src/includes/templates/admin/menu-pages/options/default.php:56
-msgid "When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls h[1-6] headings being anchored in the article (by default), or not."
-msgstr ""
-
-#: src/includes/templates/admin/menu-pages/options/default.php:57
-msgid "It is suggested that you enable this by default so that headings will always be anchored."
-msgstr ""
-
-#: src/includes/templates/admin/menu-pages/options/default.php:62
-#: src/includes/templates/admin/menu-pages/options/default.php:75
-#: src/includes/templates/admin/menu-pages/options/default.php:88
+#: src/includes/templates/admin/menu-pages/options/default.php:51
+#: src/includes/templates/admin/menu-pages/options/default.php:64
+#: src/includes/templates/admin/menu-pages/options/default.php:77
 #: src/includes/templates/admin/menu-pages/options/default.php:102
+#: src/includes/templates/admin/menu-pages/options/default.php:117
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:46
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:60
 msgid "No"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:63
-#: src/includes/templates/admin/menu-pages/options/default.php:76
-#: src/includes/templates/admin/menu-pages/options/default.php:87
-#: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:47
-msgid "Yes"
+#: src/includes/templates/admin/menu-pages/options/default.php:56
+msgid "Handle Initial Hash?"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:68
-msgid "Auto-Adjust Scroll Position?"
+#: src/includes/templates/admin/menu-pages/options/default.php:57
+msgid "Automatically handle the initial hash jump (on page load) once all dynamic anchors are generated?<hr />Only disable if your theme handles the initial hash on window load."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:58
+msgid "Only disable if your theme handles the initial hash on window load."
 msgstr ""
 
 #: src/includes/templates/admin/menu-pages/options/default.php:69
-msgid "Automatically adjust the scroll position offset when moving to an anchored location?<hr />This can improve the experience for users who also see the Admin Bar in WordPress; i.e., an anchored location should not be covered by the Admin Bar."
+msgid "Auto-Adjust Scroll Position?"
 msgstr ""
 
 #: src/includes/templates/admin/menu-pages/options/default.php:70
+msgid "Automatically adjust the scroll position offset when moving to an anchored location?<hr />This can improve the experience for users who also see the Admin Bar in WordPress; i.e., an anchored location should not be covered by the Admin Bar."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:71
 msgid "It is suggested that you enable this so headings will align properly with the WordPress Admin Bar."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:81
-msgid "Lazy Load?"
+#: src/includes/templates/admin/menu-pages/options/default.php:84
+msgid "JS/CSS Content Selector"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:82
-msgid "Enable this to avoid loading JS/CSS on pages that do not contain headings."
+#: src/includes/templates/admin/menu-pages/options/default.php:85
+msgid "This must be a valid CSS selector. It's used by jQuery to find the DOM 'content'.<hr />Many WordPress themes use <code>.entry-content</code>, but you may need to change this so it works with your theme.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:86
+msgid "Widening the scope of this selector may pick up additional headings like an &lt;h1&gt; tag."
 msgstr ""
 
 #: src/includes/templates/admin/menu-pages/options/default.php:95
-msgid "Enable TOC by Default?"
+msgid "Enable Anchors by Default?"
 msgstr ""
 
 #: src/includes/templates/admin/menu-pages/options/default.php:96
-msgid "When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls the Table of Contents being shown in the article (by default), or not."
+msgid "When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls h[1-6] headings being anchored in the article (by default), or not."
 msgstr ""
 
 #: src/includes/templates/admin/menu-pages/options/default.php:97
+msgid "It is suggested that you enable this by default so that headings will always be anchored."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:110
+msgid "Enable TOC by Default?"
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:111
+msgid "When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This controls the Table of Contents being shown in the article (by default), or not."
+msgstr ""
+
+#: src/includes/templates/admin/menu-pages/options/default.php:112
 msgid "Choosing <strong>'via sidebar widget'</strong> depends on you adding the <a href=\"%1$s\" target=\"_blank\">TOC Widget</a> to a Sidebar. Choosing <strong>'via [toc] shortcode'</strong> allows you to insert a TOC wherever you want using the <a href=\"%2$s\" target=\"_blank\">[toc] shortcode</a>."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:103
+#: src/includes/templates/admin/menu-pages/options/default.php:118
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:61
 msgid "Yes (float left)"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:104
+#: src/includes/templates/admin/menu-pages/options/default.php:119
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:62
 msgid "Yes (float right)"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:105
+#: src/includes/templates/admin/menu-pages/options/default.php:120
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:63
 msgid "Yes (via sidebar widget)"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:106
+#: src/includes/templates/admin/menu-pages/options/default.php:121
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:64
 msgid "Yes (via [toc] shortcode)"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:111
+#: src/includes/templates/admin/menu-pages/options/default.php:126
 msgid "TOC: Default Max Heading Size"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:112
+#: src/includes/templates/admin/menu-pages/options/default.php:127
 msgid "When %1$s is applicable (based on your Post Type options), what should be the default setting for a Post?<hr />This is the maximum heading size that will be displayed in a Table of Contents, by default."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:113
+#: src/includes/templates/admin/menu-pages/options/default.php:128
 msgid "For instance, setting this to <code>h3</code> means that <code>h4</code>, <code>h5</code>, <code>h6</code> headings will not be shown in the TOC."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:118
+#: src/includes/templates/admin/menu-pages/options/default.php:133
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:77
 msgid "Show All Headings"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:119
+#: src/includes/templates/admin/menu-pages/options/default.php:134
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:78
 msgid "<h1>"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:120
+#: src/includes/templates/admin/menu-pages/options/default.php:135
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:79
 msgid "<h2>"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:121
+#: src/includes/templates/admin/menu-pages/options/default.php:136
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:80
 msgid "<h3>"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:122
+#: src/includes/templates/admin/menu-pages/options/default.php:137
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:81
 msgid "<h4>"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:123
+#: src/includes/templates/admin/menu-pages/options/default.php:138
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:82
 msgid "<h5>"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:124
+#: src/includes/templates/admin/menu-pages/options/default.php:139
 #: src/includes/templates/admin/menu-pages/post-meta-box/settings.php:83
 msgid "<h6>"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:130
+#: src/includes/templates/admin/menu-pages/options/default.php:145
 msgid "TOC: Min Required Headings"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:131
+#: src/includes/templates/admin/menu-pages/options/default.php:146
 msgid "This forces X number of headings to exist in any given article for a TOC to be shown."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:132
+#: src/includes/templates/admin/menu-pages/options/default.php:147
 msgid "e.g., Setting this to a value of <code>3</code> will auto-hide the TOC when there are less than 3 headings."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:143
+#: src/includes/templates/admin/menu-pages/options/default.php:158
 msgid "Post Type Options"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:144
+#: src/includes/templates/admin/menu-pages/options/default.php:159
 msgid "These two settings give you the flexibility to include (or exclude) specific Post Types. It's usually easier to forget about the list of exclusions and instead choose specific Post Types to include. The choice is yours. You can use one of these lists only, or both together at the same time."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:148
+#: src/includes/templates/admin/menu-pages/options/default.php:163
 msgid "Include Post Types"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:149
+#: src/includes/templates/admin/menu-pages/options/default.php:164
 msgid "This enables the %1$s meta box (and TOC-related functionality) for specific Post Types. If nothing selected, all are included by default."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:163
+#: src/includes/templates/admin/menu-pages/options/default.php:178
 msgid "Exclude Post Types"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:164
+#: src/includes/templates/admin/menu-pages/options/default.php:179
 msgid "This disables the %1$s meta box (and TOC-related functionality) for specific Post Types that you exclude."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:182
+#: src/includes/templates/admin/menu-pages/options/default.php:197
 msgid "CSS / Style Options"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:183
+#: src/includes/templates/admin/menu-pages/options/default.php:198
 msgid "These options allow you to style the anchors used by %1$s."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:187
+#: src/includes/templates/admin/menu-pages/options/default.php:202
 msgid "Custom Anchor Symbol"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:188
+#: src/includes/templates/admin/menu-pages/options/default.php:203
 msgid "This controls the marker used to indicate a hashed location."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:189
-#: src/includes/templates/admin/menu-pages/options/default.php:199
+#: src/includes/templates/admin/menu-pages/options/default.php:204
+#: src/includes/templates/admin/menu-pages/options/default.php:214
 msgid "Copy/paste alternatives: <span style=\"font-size:1.5em;\">¶ § 🔗 #</span><br />"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:190
-#: src/includes/templates/admin/menu-pages/options/default.php:200
+#: src/includes/templates/admin/menu-pages/options/default.php:205
+#: src/includes/templates/admin/menu-pages/options/default.php:215
 msgid "You can also set this to a URL or path; e.g., <code>/custom-icon.svg</code>"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:197
+#: src/includes/templates/admin/menu-pages/options/default.php:212
 msgid "Custom TOC Symbol"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:198
+#: src/includes/templates/admin/menu-pages/options/default.php:213
 msgid "This controls the marker used to indicate a hashed location in the TOC."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:207
+#: src/includes/templates/admin/menu-pages/options/default.php:222
 msgid "Custom Styles"
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:208
+#: src/includes/templates/admin/menu-pages/options/default.php:223
 msgid "e.g., Add lines that customize style attributes such as <code>width:</code>, <code>color:</code>, etc."
 msgstr ""
 
-#: src/includes/templates/admin/menu-pages/options/default.php:209
+#: src/includes/templates/admin/menu-pages/options/default.php:224
 msgid "Use <a href=\"%1$s\" target=\"_blank\"><code>!important</code></a> to override default structural styles."
 msgstr ""
 

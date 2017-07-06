@@ -40,6 +40,46 @@ $Form = $this->s::MenuPageForm('§save-options');
         sprintf(__('Browse the <a href="%1$s" target="_blank">knowledge base</a> to learn more about these options.', 'wp-tocify'), esc_url(s::brandUrl('/kb')))
     ); ?>
 
+        <?= $Form->selectRow([
+            'label' => __('Lazy Load?', 'wp-tocify'),
+            'tip'   => __('Enable this to avoid loading JS/CSS on pages that do not contain headings.', 'wp-tocify'),
+
+            'name'    => 'lazy_load',
+            'value'   => s::getOption('lazy_load'),
+            'options' => [
+                '1' => __('Yes', 'wp-tocify'),
+                '0' => __('No', 'wp-tocify'),
+            ],
+        ]); ?>
+
+        <?= $Form->selectRow([
+            'label' => __('Handle Initial Hash?', 'wp-tocify'),
+            'tip'   => __('Automatically handle the initial hash jump (on page load) once all dynamic anchors are generated?<hr />Only disable if your theme handles the initial hash on window load.', 'wp-tocify'),
+            'note'  => __('Only disable if your theme handles the initial hash on window load.', 'wp-tocify'),
+
+            'name'    => 'handle_initial_hash',
+            'value'   => s::getOption('handle_initial_hash'),
+            'options' => [
+                '1' => __('Yes', 'wp-tocify'),
+                '0' => __('No', 'wp-tocify'),
+            ],
+        ]); ?>
+
+        <?= $Form->selectRow([
+            'label' => __('Auto-Adjust Scroll Position?', 'wp-tocify'),
+            'tip'   => __('Automatically adjust the scroll position offset when moving to an anchored location?<hr />This can improve the experience for users who also see the Admin Bar in WordPress; i.e., an anchored location should not be covered by the Admin Bar.', 'wp-tocify'),
+            'note'  => __('It is suggested that you enable this so headings will align properly with the WordPress Admin Bar.', 'wp-tocify'),
+
+            'name'    => 'adjust_scroll_pos',
+            'value'   => s::getOption('adjust_scroll_pos'),
+            'options' => [
+                '1' => __('Yes', 'wp-tocify'),
+                '0' => __('No', 'wp-tocify'),
+            ],
+        ]); ?>
+
+        <?= $Form->hrRow(); ?>
+
         <?= $Form->inputRow([
             'label' => __('JS/CSS Content Selector', 'wp-tocify'),
             'tip'   => __('This must be a valid CSS selector. It\'s used by jQuery to find the DOM \'content\'.<hr />Many WordPress themes use <code>.entry-content</code>, but you may need to change this so it works with your theme.<hr />Only the first matching selector applies; i.e., this comma-delimited list is in order of priority.', 'wp-tocify'),
@@ -61,31 +101,6 @@ $Form = $this->s::MenuPageForm('§save-options');
             'options' => [
                 '0' => __('No', 'wp-tocify'),
                 '1' => __('Yes', 'wp-tocify'),
-            ],
-        ]); ?>
-
-        <?= $Form->selectRow([
-            'label' => __('Auto-Adjust Scroll Position?', 'wp-tocify'),
-            'tip'   => __('Automatically adjust the scroll position offset when moving to an anchored location?<hr />This can improve the experience for users who also see the Admin Bar in WordPress; i.e., an anchored location should not be covered by the Admin Bar.', 'wp-tocify'),
-            'note'  => __('It is suggested that you enable this so headings will align properly with the WordPress Admin Bar.', 'wp-tocify'),
-
-            'name'    => 'default_anchors_adjust_scroll_pos',
-            'value'   => s::getOption('default_anchors_adjust_scroll_pos'),
-            'options' => [
-                '0' => __('No', 'wp-tocify'),
-                '1' => __('Yes', 'wp-tocify'),
-            ],
-        ]); ?>
-
-        <?= $Form->selectRow([
-            'label' => __('Lazy Load?', 'wp-tocify'),
-            'tip'   => __('Enable this to avoid loading JS/CSS on pages that do not contain headings.', 'wp-tocify'),
-
-            'name'    => 'lazy_load',
-            'value'   => s::getOption('lazy_load'),
-            'options' => [
-                '1' => __('Yes', 'wp-tocify'),
-                '0' => __('No', 'wp-tocify'),
             ],
         ]); ?>
 

@@ -146,10 +146,12 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
         $lazy_load        = s::getOption('lazy_load');
         $lazy_load_marker = '<!--'.$this->App->Config->©brand['©slug'].'-->';
 
-        $context = s::getOption('context'); // Must have a context (always).
+        $handle_initial_hash = (bool) s::getOption('handle_initial_hash');
+        $adjust_scroll_pos   = (bool) s::getOption('adjust_scroll_pos');
 
-        $anchors_enable            = (bool) s::getPostMeta(null, '_anchors_enable', s::getOption('default_anchors_enable'));
-        $anchors_adjust_scroll_pos = (bool) s::getOption('default_anchors_adjust_scroll_pos');
+        $context = (string) s::getOption('context'); // Must have.
+
+        $anchors_enable = (bool) s::getPostMeta(null, '_anchors_enable', s::getOption('default_anchors_enable'));
 
         $toc_enable           = (string) s::getPostMeta(null, '_toc_enable', s::getOption('default_toc_enable'));
         $toc_max_heading_size = (int) s::getPostMeta(null, '_toc_max_heading_size', s::getOption('default_toc_max_heading_size'));
@@ -194,10 +196,12 @@ class StylesScripts extends SCoreClasses\SCore\Base\Core
             $anchors_enable = true; // Always true if applicable.
         }
         return $settings = s::applyFilters('script_settings', [
+            'handleInitialHash' => $handle_initial_hash,
+            'adjustScrollPos'   => $adjust_scroll_pos,
+
             'context' => $context,
 
-            'anchorsEnable'          => $anchors_enable,
-            'anchorsAdjustScrollPos' => $anchors_adjust_scroll_pos,
+            'anchorsEnable' => $anchors_enable,
 
             'tocEnable'         => $toc_enable,
             'tocMaxHeadingSize' => $toc_max_heading_size,

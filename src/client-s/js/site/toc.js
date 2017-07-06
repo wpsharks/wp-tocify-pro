@@ -49,20 +49,19 @@
        * Conditionals.
        */
       if (!$('.' + x.brand.slug).length) {
-        // Check for body class.
         $widget.remove();
         $shortcode.remove();
-        return; // Not applicable.
+        return;
 
       } else if (!x.settings.anchorsEnable) {
         $widget.remove();
         $shortcode.remove();
-        return; // Not applicable.
+        return;
 
       } else if (!$context.length) {
         $widget.remove();
         $shortcode.remove();
-        return; // Not applicable.
+        return;
       }
 
       /*
@@ -184,7 +183,9 @@
      * Initial hash location.
      */
     var maybeHandleInitialHash = function () {
-      if (!location.hash || !location.hash.length) {
+      if (!x.settings.handleInitialHash) {
+        return; // Not applicable.
+      } else if (!location.hash || !location.hash.length) {
         return; // Not applicable.
       } else if (location.hash.indexOf('#toc-') !== 0) {
         return; // Not applicable.
@@ -199,7 +200,7 @@
      * Maybe adjust hash location.
      */
     var maybeAdjustHashLocation = function () {
-      if (!x.settings.anchorsAdjustScrollPos) {
+      if (!x.settings.adjustScrollPos) {
         return; // Not applicable.
       } else if (!location.hash || !location.hash.length) {
         return; // Not applicable.
