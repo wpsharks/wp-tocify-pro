@@ -87,7 +87,7 @@
 .wp-tocify:not(#x) .wp-tocify-anchor:focus,
 .wp-tocify:not(#x) .wp-tocify-anchor:active,
 .wp-tocify:not(#x) .wp-tocify-anchor:visited {
-  left: 5px;
+  left: 10px;
   position: relative;
 }
 
